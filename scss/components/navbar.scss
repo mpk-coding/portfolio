@@ -1,0 +1,23 @@
+.navbar {
+  position: fixed;
+  z-index: 99;
+  //
+  top: 0;
+  left: 0;
+  //
+  width: 100%;
+  height: $navbarHeight;
+  //
+  background: var(--light);
+  box-shadow: 0px -1px 3px 1px black;
+  //
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  //
+  height: 100%;
+  padding: 1rem 2rem;
+  //
+}

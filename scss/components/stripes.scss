@@ -1,0 +1,108 @@
+.stripes {
+  //
+  &__text {
+    background: white;
+    border: 1rem solid var(--secondary);
+    width: fit-content;
+    margin-top: 2rem;
+    padding: 4rem 2rem;
+    //
+    & a {
+      &:link,
+      &:visited {
+        color: var(--dark);
+      }
+      //
+      &:hover {
+        color: var(--primary);
+        //
+      }
+      //
+    }
+    //
+  }
+  //
+}
+
+.courses {
+  //
+  $coursesBorderRadius: 1rem;
+  $coursesBackground: #fffce3;
+  //
+  &__container {
+    --borderRadius: #{$coursesBorderRadius};
+    --background: #{$coursesBackground};
+    //
+    grid-column: content-start / col-end 2;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 2rem 0;
+    //
+    &::after {
+      content: "";
+      width: 100%;
+      height: 4rem;
+      position: absolute;
+      bottom: -3rem;
+      left: 0;
+      background: var(--background);
+      //
+      border-bottom-left-radius: var(--borderRadius);
+      border-bottom-right-radius: var(--borderRadius);
+    }
+    //
+    & .courses__heading,
+    &::after,
+    & a {
+      box-shadow: 0 3px 6px -6px black;
+      //
+    }
+    //
+  }
+  //
+  &__heading {
+    color: var(--primary);
+    padding: 2rem 4rem;
+    background: var(--background);
+    //
+    border-top-left-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+  }
+  //
+  &__list {
+    padding: 0;
+    //
+    & li:not(:first-child) a {
+      margin-top: 1rem;
+    }
+    //
+    & a {
+      margin-top: 1rem;
+      padding: 2rem 4rem;
+      display: block;
+      background: var(--background);
+      //
+      transition-property: transform, color;
+      transition-duration: 0.125s;
+      transition-timing-function: ease-out;
+      //
+      &:hover {
+        //transform: translateY(-5px) scale(1.01);
+        transform: translateX(1rem);
+        //box-shadow: 0 8px 12px -12px black;
+      }
+      //
+    }
+    //
+  }
+  //
+  @include respond("portrait") {
+    &__container {
+      grid-column: content-start / content-end;
+    }
+    //
+  }
+  //
+}

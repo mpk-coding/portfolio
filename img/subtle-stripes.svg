@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="100"
+   height="4345,000"
+   viewBox="0 0 100 4345,000"
+   version="1.1"
+   id="svg19423"
+   sodipodi:docname="subtle-stripes.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <style
+     id="style19755">
+.line2 { 
+    fill:#f1f2c4 !important;
+}
+.line1 { fill:#a66963 !important; }
+</style>
+  <defs
+     id="defs19427" />
+  <sodipodi:namedview
+     id="namedview19425"
+     pagecolor="#2c4373"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="3.824634"
+     inkscape:cx="62.228177"
+     inkscape:cy="4317.1451"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg19423">
+    <sodipodi:guide
+       position="0,100"
+       orientation="0,100"
+       id="guide20277" />
+    <sodipodi:guide
+       position="100,100"
+       orientation="100,0"
+       id="guide20279" />
+    <sodipodi:guide
+       position="100,0"
+       orientation="0,-100"
+       id="guide20281" />
+    <sodipodi:guide
+       position="0,0"
+       orientation="-100,0"
+       id="guide20283" />
+  </sodipodi:namedview>
+  <g
+     id="g19842"
+     class="line1"
+     style="">
+    <circle
+       id="path19451"
+       cx="50"
+       cy="25"
+       r="25" />
+    <rect
+       id="rect19574"
+       width="50"
+       height="4320"
+       x="25"
+       y="25"
+       style="stroke-width:4.24264" />
+  </g>
+  <g
+     id="g19842-6"
+     class="line2"
+     transform="translate(-50)"
+     style="">
+    <circle
+       id="path19451-7"
+       cx="50"
+       cy="25"
+       r="25" />
+    <rect
+       id="rect19574-0"
+       width="50"
+       height="4320"
+       x="25"
+       y="25"
+       style="stroke-width:4.24264" />
+  </g>
+  <g
+     id="g19842-6-9"
+     class="line2"
+     transform="translate(50)"
+     style="">
+    <circle
+       id="path19451-7-2"
+       cx="50"
+       cy="25"
+       r="25" />
+    <rect
+       id="rect19574-0-4"
+       width="50"
+       height="4320"
+       x="25"
+       y="25"
+       style="stroke-width:7.58947" />
+  </g>
+</svg>

@@ -1,0 +1,76 @@
+.footer {
+  //
+  border-top: 1px solid currentColor;
+  //
+  @include grid;
+  //
+  align-items: flex-start;
+  //
+  @include respond("phone") {
+    justify-content: center;
+  }
+  //
+  padding: 2rem;
+  //
+  color: var(--dark);
+  //
+  & > * {
+    text-decoration: none;
+    min-height: unset;
+    width: 100%;
+    //
+  }
+  //
+  .copyRight {
+    grid-column: start / col-end 1;
+  }
+  //
+  p,
+  .copyright,
+  .acreditation__link {
+    font-size: 1.6rem;
+    color: inherit;
+    //
+  }
+  //
+  .acreditation__container {
+    margin-left: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    //
+    grid-column: col-start 3 / end;
+    //
+    @include respond("phone") {
+      flex: 0 0 100%;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      //
+      grid-column: start / end;
+    }
+    //
+  }
+  //
+  .acreditation__caption {
+    flex: 0 0 100%;
+    text-align: end;
+    border-bottom: 1px solid var(--secondary);
+    //
+    @include respond("phone") {
+      text-align: start;
+      //
+    }
+    //
+  }
+  //
+  p,
+  .acreditation__link {
+    white-space: nowrap;
+    display: block;
+    padding: 0.5rem 1rem;
+    //
+  }
+  //
+}

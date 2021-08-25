@@ -1,0 +1,31 @@
+.background__videoContainer {
+  position: relative;
+  overflow: hidden;
+  //
+  border-top: 1px solid var(--secondary);
+  //
+  & > *:not(.background__video) {
+    position: relative;
+    z-index: 1;
+    //
+  }
+  //
+}
+//
+.background__video {
+  position: absolute;
+  z-index: auto;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: overlay;
+  //
+  &--hidden {
+    opacity: 0;
+    //
+  }
+  //
+}

@@ -1,0 +1,13 @@
+%heading {
+  font-weight: 600;
+  line-height: 1;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+%date {
+  font-size: initial;
+  color: #4e4e4e;
+}

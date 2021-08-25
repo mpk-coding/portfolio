@@ -1,0 +1,81 @@
+//--| MEDIA QUERY MANAGER
+/* INFO 
+
+0 - 600px     : Phone
+600 - 900px   : Tablet portrait
+900 - 1200px  : Tablet landscape
+12000 - 1800px: Desktop
+1800px +      : Big desktop
+192dpi        : Retina displays
+
+$breakpoint argument choices:
+- phone
+- portrait
+- landscape
+- whale
+- retina
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+Breakpoints in EM units.
+1em = 16px default.
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == "phone" {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } // 600px / 16 = 37.5em
+  }
+  @if $breakpoint == "portrait" {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } // 900px / 16 = 56.25em
+  }
+  @if $breakpoint == "landscape" {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } // 1200px / 16 = 75em
+  }
+  @if $breakpoint == "whale" {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } // 1800px / 16 = 112.5em
+  }
+  @if $breakpoint == "retina" {
+    @media only screen and (min-resolution: 192dpi) {
+      @content;
+    } // for retina displays
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+//
+//	GRID
+//
+@mixin grid {
+  display: grid;
+  //
+  grid-template-columns:
+    [start]
+    minmax(2rem, 1fr) [content-start] repeat(
+      3,
+      [col-start] minmax(min-content, 3fr) [col-end]
+    )
+    [content-end]
+    minmax(2rem, 1fr)
+    [end];
+  //
+  grid-column-gap: 2rem;
+  //
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  //
+}

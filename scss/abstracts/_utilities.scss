@@ -1,0 +1,59 @@
+//on the containing / parent element
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+//to disable transition that occur on page load
+.preload {
+  transition: none;
+}
+
+//
+.background {
+  //
+  @each $key, $value in $currentTheme {
+    &--#{$key} {
+      background-color: #{$value};
+      //
+    }
+    //
+  }
+  //
+  &--display {
+    border: 1rem solid currentColor;
+    background: var(--light);
+  }
+  &--stripes {
+    background-color: var(--secondary);
+    background-image: url("../img/subtle-stripes.svg");
+    background-position: 50% 50%;
+    //
+  }
+  //
+  &--ailsa-navy {
+    background-image: linear-gradient(var(--light), var(--light)),
+      url(../img/ailsa-navy.svg);
+    background-position: 50% 50%;
+    background-size: 54%;
+    background-blend-mode: screen;
+  }
+}
+//
+.text {
+  //
+  @each $key, $value in $currentTheme {
+    &--#{$key} {
+      color: #{$value};
+      //
+    }
+    //
+  }
+  //
+}
+//
+
+.box {
+  border: 1px solid red;
+}

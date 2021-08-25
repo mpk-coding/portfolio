@@ -1,0 +1,107 @@
+.skills {
+  &__container {
+    //
+    padding: 4rem;
+    //
+    font-family: "Overpass", sans-serif;
+    font-weight: 800;
+    //
+    & + .container {
+      text-align: center;
+      //
+    }
+    //
+  }
+  //
+  &__content {
+    padding: 4rem 0;
+    //
+  }
+  //
+  &__group {
+    --size: 0.5rem;
+    //
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    //
+    & span {
+      //
+      &:not(:first-child) {
+        margin-left: 2rem;
+        position: relative;
+        //
+        &::after {
+          //
+          content: "";
+          position: absolute;
+          left: -1rem;
+          top: 50%;
+          transform: translate(-50%, calc(-50% - 0.1em));
+          width: var(--size);
+          height: var(--size);
+          border-radius: 50%;
+          background: var(--light);
+          //
+        }
+        //
+      }
+      //
+    }
+    //
+    @include respond("portrait") {
+      //
+      position: relative;
+      //
+      &:not(:first-child)::after {
+        //
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -1rem;
+        transform: translate(-50%, calc(-50% - 0.1em));
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        background: var(--light);
+        //
+      }
+      //
+      & span {
+        flex: 0 0 100%;
+        //
+        &:not(:first-child) {
+          margin-left: 0;
+          margin-top: 2rem;
+          //
+          &::after {
+            left: 50%;
+            top: -1rem;
+            //
+            transform: translate(-50%, -50%);
+            //
+          }
+          //
+        }
+        //
+      }
+      //
+    }
+    //
+    &:not(:first-child) {
+      margin-top: 2rem;
+      //
+    }
+    //
+  }
+  //
+}
+//
+.myWork__link {
+  grid-column: content-start / content-end;
+  //
+  margin-left: auto;
+  //
+}

@@ -1,0 +1,23 @@
+{
+  "name": "mpk_portfolio",
+  "version": "1.0.0",
+  "description": "MPK Portfolio Static Webpage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass": "node-sass scss/main.scss css/style.css -w"
+  },
+  "keywords": [
+    "Portfolio",
+    "Personal",
+    "Static",
+    "Webpage",
+    "Frontend",
+    "Backend"
+  ],
+  "author": "Marek Kononiuk",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

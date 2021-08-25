@@ -1,0 +1,93 @@
+//
+//  GREEN THEME
+//
+$greenTheme: (
+  "primary": #628c07,
+  "secondary": #c3d9b4,
+  "dark": #00010d,
+  "light": #c3d9b4,
+  "white": #d6d9c5,
+);
+//
+//  BLUE THEME
+//
+$blueTheme: (
+  "primary": #a66963,
+  "secondary": #2c4373,
+  "dark": #030640,
+  "light": #93bfbb,
+  "white": #f1f2c4,
+);
+//
+$theme: "blue";
+//
+body {
+  /*  Vars are inherited, by declaring them on elements we can manipulate them with js  */
+
+  @if ($theme == "blue") {
+    //
+    $currentTheme: $blueTheme !global;
+    //
+  }
+  //
+  @if ($theme == "green") {
+    //
+    $currentTheme: $greenTheme !global;
+    //
+  }
+  //
+  @each $key, $value in $currentTheme {
+    --#{$key}: #{$value};
+    //
+  }
+  //
+}
+
+//COLORS
+
+//CAROUSEL
+
+$btn-diameter: 6rem;
+$btn-padding: 1rem;
+$btn-size: calc(#{$btn-diameter} + #{$btn-padding} * 2);
+
+$padding--carousel: 6rem;
+$row-margin-right--carousel: 12rem;
+
+//GRID
+$grid-width: 114rem;
+$grid-width-small: 50rem;
+
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
+
+$gutter-vertical-small: 6rem;
+$gutter-horizontal-small: 0;
+
+$row-padding: 0 6rem;
+$row-padding-medium: 0 3rem;
+$row-padding-small: 0 2rem;
+
+//LAYOUT
+$padding: 3rem;
+
+$padding--small: 0;
+
+//TYPOGRAPHY
+$default-font-size: 1.6rem;
+
+//SELECTORS
+$placeholders: "::-webkit-input-placeholder,::-moz-input-placeholder,::-o-input-placeholder,::-ms-input-placeholder";
+
+//MAPS
+$cbs-selector-prefixes: (
+  webkit: "-webkit-",
+  moz: "-moz-",
+  ms: "-ms-",
+  o: "-o-",
+  blank: "",
+);
+
+//  NAVBAR
+$navbarHeight: 7rem;
+//
