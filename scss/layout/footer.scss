@@ -23,6 +23,16 @@
   //
   .copyRight {
     grid-column: start / col-end 1;
+    //
+    @include respond("phone") {
+      grid-column: start / end;
+      //
+      text-align: center;
+      //
+    }
+    //
+    //  asd
+    //
   }
   //
   p,
@@ -36,9 +46,9 @@
   .acreditation__container {
     margin-left: auto;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    align-items: center;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-end;
     //
     grid-column: col-start 3 / end;
     //

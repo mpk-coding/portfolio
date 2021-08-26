@@ -41,6 +41,10 @@ function alternateVideos() {
       event.target.style.transitionDuration = transitionDuration / 1000 + "s";
       event.target.classList.add("background__video--hidden");
       //
+      setTimeout(function () {
+        event.target.pause();
+        //
+      }, transitionDuration);
       //
       //
       videosNodes = document.querySelectorAll(".background__video");

@@ -634,6 +634,10 @@ a:hover {
     width: 100%; }
   .footer .copyRight {
     grid-column: start / col-end 1; }
+    @media only screen and (max-width: 37.5em) {
+      .footer .copyRight {
+        grid-column: start / end;
+        text-align: center; } }
   .footer p,
   .footer .copyright,
   .footer .acreditation__link {
@@ -642,9 +646,9 @@ a:hover {
   .footer .acreditation__container {
     margin-left: auto;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    align-items: center;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-end;
     grid-column: col-start 3 / end; }
     @media only screen and (max-width: 37.5em) {
       .footer .acreditation__container {

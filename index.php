@@ -109,6 +109,8 @@ include "views/header.php";
           class="acreditation__link">pexels.com</a>
         <a target="__blank" href="https://www.pexels.com/pl-pl/video/jedzenie-wzor-tekstura-abstrakcyjny-6824078/"
           class="acreditation__link">pexels.com</a>
+        <a href="https://www.pexels.com/pl-pl/video/zolty-moc-retro-telewizja-6976215/"
+          class="acreditation__link">KoolShooters - pexels.com</a>
       </div>
     </div>
   </footer>
