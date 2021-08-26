@@ -14,18 +14,21 @@
 //
 .background__video {
   position: absolute;
-  z-index: auto;
+  z-index: 0;
   top: 50%;
   left: 50%;
-  width: auto;
   min-width: 100%;
   min-height: 100%;
   transform: translate(-50%, -50%);
-  mix-blend-mode: overlay;
   //
+  transition-property: opacity;
+  transition-timing-function: ease-in;
+  //
+  transition-duration: var(--transitionDuration);
   &--hidden {
     opacity: 0;
     //
+    transition-duration: var(--transitionDuration);
   }
   //
 }

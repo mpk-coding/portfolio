@@ -23,9 +23,16 @@ html {
 }
 
 body {
-  background-color: var(--light);
+  background-color: var(--white);
   //
-  padding-top: $navbarHeight;
+  color: var(--dark);
+  //
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  //
 }
 
 .grid__container,

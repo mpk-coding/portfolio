@@ -6,12 +6,10 @@ function alternateVideos() {
   //
   let videosContainer = document.querySelector(".background__videoContainer");
   let videosNodes = document.querySelectorAll(".background__video");
+  let video = document.querySelector(".background__video");
+  let videoHidden = document.querySelector(".background__video--hidden");
   //
-  let getVideoDuration = Number(
-    document.querySelector(".background__video").duration
-  )
-    .toFixed(2)
-    .toString();
+  let getVideoDuration = Number(video.duration).toFixed(2).toString();
   let videoDuration = "";
   //
   for (let z = 0; z < getVideoDuration.length; z++) {
@@ -26,36 +24,58 @@ function alternateVideos() {
   //
   videoDuration = Number(videoDuration * 10);
   //
-  let transitionDuration = videoDuration / 2;
-  console.log(videoDuration);
-  console.log(transitionDuration);
+  let transitionDuration = 3000;
   //
-  const initVideo = new Event("initVideo", { bubbles: true });
+  const initVideo = new Event("initVideo", {bubbles: true});
   //
   videosContainer.addEventListener("initVideo", function (event) {
     //
+    let timestamp = event.target.dataset.timeStart * 1000;
+    //
+    // delay != > videoDuration - timestamp - transitionDuration
+    let delay = Math.floor(
+      Math.random() *
+        ([videoDuration - timestamp - transitionDuration] -
+          (transitionDuration + 1000)) +
+        (transitionDuration + 1000)
+    );
+    //
+    let newCurrentTime =
+      Math.floor(
+        Math.random() *
+          ([videoDuration - delay - transitionDuration + 1000] - 0) +
+          0
+      ) / 1000;
+    //
     setTimeout(function () {
       //  new background
-      event.target.style.transitionTimingFunction = "ease-in";
+      let oldTarget = event.target;
       //
-      event.target.style.transitionDuration = transitionDuration / 1000 + "s";
-      event.target.classList.add("background__video--hidden");
+      //
+      //
+      oldTarget.style.setProperty(
+        "--transitionDuration",
+        transitionDuration / 1000 + "s"
+      );
       //
       setTimeout(function () {
-        event.target.pause();
+        oldTarget.classList.add("background__video--hidden");
+        //
+      }, 10);
+      //
+      setTimeout(function () {
+        //
+        oldTarget.pause();
         //
       }, transitionDuration);
       //
       //
+      //
       videosNodes = document.querySelectorAll(".background__video");
+      //
       for (let element of videosNodes) {
         //  new foreground
         if (element != event.target) {
-          //
-          element.style.transitionProperty = "opacity";
-          element.style.transitionDuration =
-            transitionDuration / 1000 / 2 + "s";
-          element.style.transitionTimingFunction = "ease-out";
           //
           //  fix for DOMstructure taking precedence in overlay with opacity
           //
@@ -64,9 +84,13 @@ function alternateVideos() {
           //  workaround technical limitations of transitions on elements being manipulated in DOM
           //  use @keyframes instead
           //
+          element.style.setProperty(
+            "--transitionDuration",
+            transitionDuration / 1000 / 2 + "s"
+          );
           setTimeout(function () {
             element.classList.remove("background__video--hidden");
-          }, 100);
+          }, 10);
           //
           //  save the !event.target
           //
@@ -78,26 +102,26 @@ function alternateVideos() {
       //
       //  start new cycle
       //
-      newTarget.currentTime = 0;
-      newTarget.play();
-      newTarget.dispatchEvent(initVideo);
+      newTarget.currentTime = newCurrentTime;
       //
-    }, videoDuration - transitionDuration);
+      newTarget.dataset.timeStart = newCurrentTime;
+      //
+      setTimeout(function () {
+        newTarget.play();
+        newTarget.dispatchEvent(initVideo);
+      }, 20);
+      //
+    }, delay);
     //
   });
   //
   videosNodes.forEach(function (currentValue) {
     //
-    currentValue.style.transitionProperty = "opacity";
-    currentValue.style.transitionTimingFunction = "ease-out";
-    currentValue.style.transitionDuration = transitionDuration / 1000 + "s";
-    //
     if (!currentValue.classList.contains("background__video--hidden")) {
       //
-      currentValue.style.transitionTimingFunction = "ease-in";
-      currentValue.style.transitionDuration =
-        transitionDuration / 1000 / 2 + "s";
       currentValue.currentTime = 0;
+      //
+      currentValue.dataset.timeStart = 0;
       //
       currentValue.play();
       currentValue.dispatchEvent(initVideo);

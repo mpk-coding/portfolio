@@ -1,79 +1,44 @@
 .landing {
-  &__display {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-flow: column;
-    //
-    color: var(--secondary);
-    background: var(--light);
-    border: 1rem solid currentColor;
-    //
-    grid-column: content-start / col-end 1;
-    //
-    padding: 2rem 0 18rem;
-    //
-    grid-column: content-start / col-end 1;
-    width: 30rem;
-    text-align: center;
-    //
-    position: relative;
-    &::after {
-      content: "";
-      width: calc(100% + 1rem);
-      height: calc(100% + 0.5rem);
-      position: absolute;
-      top: 0;
-      left: -0.5rem;
-      border: 1px dashed var(--light);
-      border-top: none;
-    }
-    //
-    @include respond("phone") {
-      grid-column: content-start / content-end;
-    }
-    //
-    .text--display {
-      width: 100%;
-      margin-top: 1.5rem;
-      padding-top: 0.5rem;
-      border-top: 4px solid currentColor;
-    }
-    //
-  }
+  align-content: flex-end;
   //
-  &__btn {
-    --size: 5rem;
-    //
-    width: var(--size);
-    height: var(--size);
-    //
-    background: var(--light);
-    //
-    border-radius: 100%;
-    //
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    //
-
-    & > img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+  &__container {
+    grid-column: col-start 3 / end;
+    padding: 0 6rem;
     //
   }
   //
   //
   //
-  &__text {
-    grid-column: col-start 2 / content-end;
+  &__heading {
     //
-    @include respond("phone") {
-      grid-column: content-start / content-end;
-      text-align: center;
-      margin-top: 2rem;
+    font-family: 'Monofett', cursive;
+    //
+    color: var(--dark);
+    //
+    cursor: default;
+    user-select: none;
+    //
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    //
+    &,
+    & * {
+      line-height: 1;
+      //
+    }
+    //
+    //
+    //
+    & span {
+      font-size: .66em;
+      //
+      font-family: "overpass", sans-serif;
+      font-weight: 100;
+      //
+      text-transform: uppercase;
+      //
+      margin-top: .4em;
       //
     }
     //
