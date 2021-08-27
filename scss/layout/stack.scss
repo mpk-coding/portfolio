@@ -1,0 +1,48 @@
+.stack {
+  align-content: flex-start;
+  //
+  //
+  //
+  &__heading {
+    font-family: 'Unica One', cursive;
+    //
+  }
+  //
+  .container {
+    grid-column: col-start 2 / end;
+    //
+    text-align: end;
+    //
+    padding: 0 6rem;
+    //
+    &.skills__container {
+      grid-column: start / end;
+      grid-row: 2;
+      //
+      font-size: 100%;
+      //
+    }
+    //
+    &.stack__headingContainer {
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--white);
+      //
+      & .stack__heading {
+        white-space: nowrap;
+        //
+        color: var(--white);
+        //
+      }
+      //
+    }
+    //
+    &.stack__captionContainer {
+      margin-top: 3rem;
+      //
+    }
+    //
+  }
+  //
+  //
+  //
+}

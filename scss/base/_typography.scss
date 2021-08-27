@@ -1,6 +1,7 @@
 body {
   font-family: "Asap Condensed", sans-serif;
-  color: var(--secondary);
+  color: var(--white);
+  //
 }
 
 a,
@@ -42,12 +43,12 @@ a {
   &,
   &:link,
   &:visited {
-    color: var(--dark);
+    color: var(--accentDark);
     text-decoration: none;
     //
   }
   &:hover {
-    color: var(--secondary);
+    color: var(--accentLight);
     //
   }
   //

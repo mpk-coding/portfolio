@@ -24,7 +24,7 @@ function alternateVideos() {
   //
   videoDuration = Number(videoDuration * 10);
   //
-  let transitionDuration = 3000;
+  let transitionDuration = 2000;
   //
   const initVideo = new Event("initVideo", {bubbles: true});
   //
@@ -35,15 +35,25 @@ function alternateVideos() {
     // delay != > videoDuration - timestamp - transitionDuration
     let delay = Math.floor(
       Math.random() *
-        ([videoDuration - timestamp - transitionDuration] -
-          (transitionDuration + 1000)) +
-        (transitionDuration + 1000)
+        ([
+          videoDuration -
+            timestamp -
+            transitionDuration -
+            transitionDuration / 2,
+        ] -
+          transitionDuration +
+          transitionDuration / 2) +
+        transitionDuration +
+        transitionDuration / 2
     );
     //
     let newCurrentTime =
       Math.floor(
         Math.random() *
-          ([videoDuration - delay - transitionDuration + 1000] - 0) +
+          ([
+            videoDuration - delay - transitionDuration - transitionDuration / 2,
+          ] -
+            0) +
           0
       ) / 1000;
     //
@@ -61,7 +71,7 @@ function alternateVideos() {
       setTimeout(function () {
         oldTarget.classList.add("background__video--hidden");
         //
-      }, 10);
+      }, transitionDuration / 2);
       //
       setTimeout(function () {
         //

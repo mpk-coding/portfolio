@@ -2,11 +2,11 @@
 //  GREEN THEME
 //
 $greenTheme: (
-  "primary": #628c07,
-  "secondary": #c3d9b4,
-  "dark": #00010d,
-  "light": #c3d9b4,
-  "white": #d6d9c5,
+  "accentDark": #FF75FF,
+  "accentLight": #FFBDFF,
+  "dark": #010105,
+  "light": #0affda,
+  "white": #FFFAE6,
 );
 //
 //  BLUE THEME
@@ -19,7 +19,7 @@ $blueTheme: (
   "white": #f1f2c4,
 );
 //
-$theme: "blue";
+$theme: "green";
 //
 body {
   /*  Vars are inherited, by declaring them on elements we can manipulate them with js  */

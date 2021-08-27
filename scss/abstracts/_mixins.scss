@@ -79,3 +79,13 @@ Breakpoints in EM units.
   align-items: center;
   //
 }
+//
+@mixin textShadow() {
+  text-shadow:
+   -1px -1px 0 var(--dark),  
+    1px -1px 0 var(--dark),
+    -1px 1px 0 var(--dark),
+     1px 1px 0 var(--dark);
+  //
+}
+//
