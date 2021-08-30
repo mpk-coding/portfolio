@@ -133,11 +133,11 @@ table {
 
 body {
   /*  Vars are inherited, by declaring them on elements we can manipulate them with js  */
-  --accentDark: #FF75FF;
-  --accentLight: #FFBDFF;
+  --accentDark: #713871;
+  --accentLight: #904790;
   --dark: #010105;
-  --light: #0affda;
-  --white: #FFFAE6; }
+  --light: #048977;
+  --white: #8a8a93; }
 
 /* INFO 
 
@@ -209,11 +209,14 @@ main {
   min-height: calc(100vh - 7rem * 2);
   justify-content: center;
   align-items: center;
-  align-content: center;
+  align-content: flex-start;
   font-size: 3.2rem;
   padding: 6rem 0; }
   .content:not([class*="full"]) {
-    display: flex; }
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center; }
   .content--center {
     grid-column: content-start / content-end; }
   .content--full {
@@ -222,9 +225,14 @@ main {
 .container {
   padding: 3rem; }
 
+.container.container--full {
+  grid-column: start / end;
+  padding: 0 6rem; }
+
 body {
-  font-family: "Asap Condensed", sans-serif;
-  color: var(--white); }
+  font-family: "Overpass", sans-serif;
+  color: var(--white);
+  font-weight: 100; }
 
 a,
 p,
@@ -350,17 +358,32 @@ a:hover {
     padding-bottom: .175em; }
 
 .landing {
-  background: var(--dark);
+  background: black;
   align-content: flex-end;
-  height: calc(100vh - 21rem); }
+  min-height: unset;
+  height: calc(100vh - calc(17.5rem - 2px)); }
+  .landing::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top, #0affda, #0affda);
+    mix-blend-mode: color; }
   .landing::after {
     content: "";
     width: 100%;
-    height: 50%;
+    height: 100%;
     position: absolute;
+    z-index: 1;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to top, var(--dark) 11%, transparent 99%); }
+    background-image: linear-gradient(to top, var(--dark) 0%, transparent 300%);
+    mix-blend-mode: screen; }
+  .landing video {
+    object-position: 50% calc(50% + 6rem); }
   .landing__container {
     grid-column: col-start 3 / end;
     padding: 0 6rem; }
@@ -519,6 +542,7 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.6) contrast(1.33) saturate(2);
   transform: translate(-50%, -50%);
   transition-property: opacity;
   transition-timing-function: ease-in;
@@ -591,6 +615,34 @@ a:hover {
   .row .col-3-of-4 {
     width: calc(((100% - 3 * 6rem) / 4 * 3) + 2 * 6rem); }
 
+.about {
+  overflow: visible; }
+  .about__headingContainer {
+    grid-column: start / col-start 3;
+    padding: 0 3rem 3rem;
+    border-bottom: 1px solid var(--white); }
+  .about__heading {
+    font-family: "Unica One", cursive; }
+  .about__text {
+    position: relative;
+    --w: 2rem;
+    --h: .5rem;
+    --c: var(--light); }
+    .about__text p {
+      font-weight: 100;
+      position: relative; }
+      .about__text p:not(:first-child) {
+        margin-top: 1.5rem; }
+    .about__text:last-child::after {
+      content: "";
+      width: var(--w);
+      height: var(--w);
+      position: absolute;
+      bottom: calc(var(--w) * -1 - 3rem);
+      right: calc(var(--w) * -1 - 3rem);
+      border-top: var(--h) solid var(--c);
+      border-left: var(--h) solid var(--c); }
+
 .stack {
   align-content: flex-start; }
   .stack__heading {
@@ -662,7 +714,7 @@ a:hover {
     padding: 1.5rem 0; }
     .courses__list li {
       display: inline-block;
-      width: 100%; }
+      max-width: calc(100% - 6rem); }
     .courses__list li:not(:first-child) {
       margin-top: 1.5rem; }
     .courses__list li a {
@@ -767,19 +819,19 @@ a:hover {
   transition: none; }
 
 .background--accentDark {
-  background-color: #FF75FF; }
+  background-color: #713871; }
 
 .background--accentLight {
-  background-color: #FFBDFF; }
+  background-color: #904790; }
 
 .background--dark {
   background-color: #010105; }
 
 .background--light {
-  background-color: #0affda; }
+  background-color: #048977; }
 
 .background--white {
-  background-color: #FFFAE6; }
+  background-color: #8a8a93; }
 
 .background--display {
   border: 1rem solid currentColor;
@@ -797,19 +849,19 @@ a:hover {
   background-blend-mode: screen; }
 
 .text--accentDark {
-  color: #FF75FF; }
+  color: #713871; }
 
 .text--accentLight {
-  color: #FFBDFF; }
+  color: #904790; }
 
 .text--dark {
   color: #010105; }
 
 .text--light {
-  color: #0affda; }
+  color: #048977; }
 
 .text--white {
-  color: #FFFAE6; }
+  color: #8a8a93; }
 
 .box {
   border: 1px solid red; }

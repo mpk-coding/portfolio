@@ -1,0 +1,54 @@
+.about {
+  overflow: visible;
+  //
+  &__headingContainer {
+    grid-column: start / col-start 3;
+    padding: 0 3rem 3rem;
+    border-bottom: 1px solid var(--white);
+    //
+  }
+  //
+  //
+  //
+  &__heading {
+    font-family: "Unica One", cursive;
+  }
+  //
+  &__text {
+    position: relative;
+    //
+    & p {
+      font-weight: 100;
+      position: relative;
+      //
+      &:not(:first-child) {
+        margin-top: 1.5rem;
+        //
+      }
+      //
+    }
+    //
+    //
+    //
+    --w: 2rem;
+    --h: .5rem;
+    //
+    --c: var(--light);
+    //
+    &:last-child::after {
+      content: "";
+      //
+      width: var(--w);
+      height: var(--w);
+      position: absolute;
+      bottom: calc(var(--w) * -1 - 3rem);
+      right: calc(var(--w) * -1 - 3rem);
+      //
+      border-top: var(--h) solid var(--c);
+      border-left: var(--h) solid var(--c);
+      //
+    }
+    //
+  }
+  //
+}

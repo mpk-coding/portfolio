@@ -24,7 +24,7 @@ function alternateVideos() {
   //
   videoDuration = Number(videoDuration * 10);
   //
-  let transitionDuration = 2000;
+  let transitionDuration = 100;
   //
   const initVideo = new Event("initVideo", {bubbles: true});
   //

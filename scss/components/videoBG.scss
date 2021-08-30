@@ -22,6 +22,8 @@
   height: 100%;
   object-fit: cover;
   //
+  filter: brightness(0.6) contrast(1.33) saturate(2);
+  //
   transform: translate(-50%, -50%);
   //
   transition-property: opacity;
