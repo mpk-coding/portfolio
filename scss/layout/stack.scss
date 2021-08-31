@@ -13,7 +13,7 @@
     //
     text-align: end;
     //
-    padding: 0 6rem;
+    padding: 0 3rem;
     //
     &.skills__container {
       grid-column: start / end;
@@ -25,7 +25,6 @@
     //
     &.stack__headingContainer {
       padding-bottom: 3rem;
-      border-bottom: 1px solid var(--white);
       //
       & .stack__heading {
         white-space: nowrap;

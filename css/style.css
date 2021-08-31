@@ -206,7 +206,7 @@ main {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  min-height: calc(100vh - 7rem * 2);
+  min-height: calc(100vh - 7rem - 10rem);
   justify-content: center;
   align-items: center;
   align-content: flex-start;
@@ -223,7 +223,7 @@ main {
     grid-column: start / end; }
 
 .container {
-  padding: 3rem; }
+  padding: 0 3rem; }
 
 .container.container--full {
   grid-column: start / end;
@@ -245,26 +245,50 @@ blockquote {
 h1 {
   font-family: "Overpass", sans-serif;
   font-weight: 800; }
+  h1 span {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit; }
 
 h2 {
   font-family: "Overpass", sans-serif;
   font-weight: 800; }
+  h2 span {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit; }
 
 h3 {
   font-family: "Overpass", sans-serif;
   font-weight: 800; }
+  h3 span {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit; }
 
 h4 {
   font-family: "Overpass", sans-serif;
   font-weight: 800; }
+  h4 span {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit; }
 
 h5 {
   font-family: "Overpass", sans-serif;
   font-weight: 800; }
+  h5 span {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit; }
 
 h6 {
   font-family: "Overpass", sans-serif;
   font-weight: 800; }
+  h6 span {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit; }
 
 h1 {
   font-size: 8.19rem; }
@@ -361,7 +385,7 @@ a:hover {
   background: black;
   align-content: flex-end;
   min-height: unset;
-  height: calc(100vh - calc(17.5rem - 2px)); }
+  height: calc(100vh - calc(14rem)); }
   .landing::before {
     content: "";
     width: 100%;
@@ -442,12 +466,9 @@ a:hover {
   font-family: "Overpass", sans-serif;
   font-weight: 800; }
 
-.skills__content {
-  padding: 3rem 0; }
-
 .skills__group {
   --size: 0.5rem;
-  color: var(--light);
+  color: var(--white);
   display: flex;
   flex-flow: row wrap;
   justify-content: end;
@@ -619,29 +640,16 @@ a:hover {
   overflow: visible; }
   .about__headingContainer {
     grid-column: start / col-start 3;
-    padding: 0 3rem 3rem;
-    border-bottom: 1px solid var(--white); }
+    padding: 0 3rem 3rem; }
   .about__heading {
     font-family: "Unica One", cursive; }
   .about__text {
-    position: relative;
-    --w: 2rem;
-    --h: .5rem;
-    --c: var(--light); }
+    position: relative; }
     .about__text p {
       font-weight: 100;
       position: relative; }
       .about__text p:not(:first-child) {
         margin-top: 1.5rem; }
-    .about__text:last-child::after {
-      content: "";
-      width: var(--w);
-      height: var(--w);
-      position: absolute;
-      bottom: calc(var(--w) * -1 - 3rem);
-      right: calc(var(--w) * -1 - 3rem);
-      border-top: var(--h) solid var(--c);
-      border-left: var(--h) solid var(--c); }
 
 .stack {
   align-content: flex-start; }
@@ -650,14 +658,13 @@ a:hover {
   .stack .container {
     grid-column: col-start 2 / end;
     text-align: end;
-    padding: 0 6rem; }
+    padding: 0 3rem; }
     .stack .container.skills__container {
       grid-column: start / end;
       grid-row: 2;
       font-size: 100%; }
     .stack .container.stack__headingContainer {
-      padding-bottom: 3rem;
-      border-bottom: 1px solid var(--white); }
+      padding-bottom: 3rem; }
       .stack .container.stack__headingContainer .stack__heading {
         white-space: nowrap;
         color: var(--white); }
@@ -668,91 +675,64 @@ a:hover {
   overflow: visible;
   z-index: 2;
   position: relative;
-  align-content: flex-start;
-  padding-top: 24.5rem; }
-  .courses::before {
-    --size: 100rem;
-    content: "";
-    display: block;
-    width: var(--size);
-    height: var(--size);
-    background-image: url("../img/inkSplash.svg");
-    background-size: cover;
-    background-position: center center;
-    border-radius: 50%;
-    position: absolute;
-    top: 0rem;
-    left: -12rem;
-    transform: translate(-50%, -50%);
-    z-index: 1; }
+  align-content: flex-start; }
   .courses__container {
     grid-column: start / end;
-    padding: 0 6rem;
+    padding: 0 3rem;
     position: relative;
     z-index: 1; }
     .courses__container::before {
       content: "";
       display: block; }
-  .courses__heading * {
+  .courses__headingContainer.container, .courses__container {
+    padding: 0 3rem; }
+  .courses__headingContainer {
+    grid-column: start / col-start 3; }
+  .courses__heading > * {
     position: relative;
     font-size: 150%;
     font-family: "Unica One", cursive;
     display: inline-block;
-    padding-bottom: 3rem;
+    padding-bottom: 3rem; }
+  .courses__list li {
+    display: inline-block;
+    max-width: calc(100% - 6rem); }
+  .courses__list li a {
+    display: block;
+    padding: .75rem 1.5rem;
+    margin-left: -1.5rem;
+    position: relative;
+    z-index: 1;
+    font-family: "Overpass", sans-serif;
+    font-size: 150%;
+    font-weight: 800;
     text-shadow: -1px -1px 0 var(--dark), 1px -1px 0 var(--dark), -1px 1px 0 var(--dark), 1px 1px 0 var(--dark); }
-    .courses__heading *::after {
+    .courses__list li a::after {
       content: "";
-      width: 100%;
-      height: 3px;
-      background: var(--white);
-      border: 1px solid var(--dark);
       position: absolute;
       z-index: -1;
-      bottom: 0px;
-      left: 0; }
-  .courses__list {
-    padding: 1.5rem 0; }
-    .courses__list li {
-      display: inline-block;
-      max-width: calc(100% - 6rem); }
-    .courses__list li:not(:first-child) {
-      margin-top: 1.5rem; }
-    .courses__list li a {
+      top: 0;
+      right: 0;
       display: block;
-      padding: 1.5rem 3rem;
-      margin-left: -3rem;
-      position: relative;
-      z-index: 1;
-      font-family: "Overpass", sans-serif;
-      font-size: 150%;
-      font-weight: 800;
-      text-shadow: -1px -1px 0 var(--dark), 1px -1px 0 var(--dark), -1px 1px 0 var(--dark), 1px 1px 0 var(--dark); }
-      .courses__list li a::after {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        right: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: var(--accentDark);
-        border-right: 1rem solid var(--accentLight);
-        transform: scaleX(0);
-        transform-origin: right; }
-    .courses__list li,
-    .courses__list li a,
-    .courses__list li a::after {
-      transition-property: transform, color, background;
-      transition-duration: .2s;
-      transition-timing-function: ease-out; }
-    .courses__list li:hover {
-      transform: translateX(4.5rem); }
-      .courses__list li:hover a {
-        color: var(--dark);
-        text-shadow: unset; }
-      .courses__list li:hover a::after {
-        transform: scaleX(1); }
+      width: 100%;
+      height: 100%;
+      background: var(--accentDark);
+      border-right: 1rem solid var(--accentLight);
+      transform: scaleX(0);
+      transform-origin: right; }
+  .courses__list li,
+  .courses__list li a,
+  .courses__list li a::after {
+    transition-property: transform, color, background;
+    transition-duration: .2s;
+    transition-timing-function: ease-out; }
+  .courses__list li:hover {
+    transform: translateX(1.5rem); }
+    .courses__list li:hover a {
+      color: var(--dark);
+      text-shadow: unset; }
+    .courses__list li:hover a::after {
+      transform: scaleX(1); }
 
 .footer {
   border-top: 1px solid currentColor;

@@ -20,6 +20,14 @@ blockquote {
   h#{$i} {
     font-family: "Overpass", sans-serif;
     font-weight: 800;
+    //
+    & span {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      //
+    }
+    //
   }
   //
 }
