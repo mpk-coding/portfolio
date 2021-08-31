@@ -402,6 +402,9 @@ body {
   color: var(--white);
   font-weight: 100; }
 
+p {
+  line-height: 1.2; }
+
 a,
 p,
 span,
@@ -844,6 +847,9 @@ a, a:link, a:visited {
       position: relative; }
       .about__text p:not(:first-child) {
         margin-top: 1.5rem; }
+    .about__text span {
+      display: inline-block;
+      margin-top: 1.5rem; }
 
 .stack {
   align-content: flex-start; }
@@ -967,7 +973,7 @@ a.myWork__link {
   .footer p,
   .footer .copyright,
   .footer .acreditation__link {
-    font-size: 2.4rem; }
+    font-size: 2.1rem; }
   .footer .acreditation__container {
     margin-left: auto;
     display: flex;
