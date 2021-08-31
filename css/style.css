@@ -160,6 +160,169 @@ ORDER: Base + typography > general layout + grid > page layout > components
 Breakpoints in EM units.
 1em = 16px default.
 */
+@keyframes neon {
+  0% {
+    opacity: var(--neon-0); }
+  2% {
+    opacity: var(--neon-1); }
+  4% {
+    opacity: var(--neon-2); }
+  6% {
+    opacity: var(--neon-3); }
+  8% {
+    opacity: var(--neon-4); }
+  10% {
+    opacity: var(--neon-5); }
+  12% {
+    opacity: var(--neon-6); }
+  14% {
+    opacity: var(--neon-7); }
+  16% {
+    opacity: var(--neon-8); }
+  18% {
+    opacity: var(--neon-9); }
+  20% {
+    opacity: var(--neon-10); }
+  22% {
+    opacity: var(--neon-11); }
+  24% {
+    opacity: var(--neon-12); }
+  26% {
+    opacity: var(--neon-13); }
+  28% {
+    opacity: var(--neon-14); }
+  30% {
+    opacity: var(--neon-15); }
+  32% {
+    opacity: var(--neon-16); }
+  34% {
+    opacity: var(--neon-17); }
+  36% {
+    opacity: var(--neon-18); }
+  38% {
+    opacity: var(--neon-19); }
+  40% {
+    opacity: var(--neon-20); }
+  42% {
+    opacity: var(--neon-21); }
+  44% {
+    opacity: var(--neon-22); }
+  46% {
+    opacity: var(--neon-23); }
+  48% {
+    opacity: var(--neon-24); }
+  50% {
+    opacity: var(--neon-25); }
+  52% {
+    opacity: var(--neon-26); }
+  54% {
+    opacity: var(--neon-27); }
+  56% {
+    opacity: var(--neon-28); }
+  58% {
+    opacity: var(--neon-29); }
+  60% {
+    opacity: var(--neon-30); }
+  62% {
+    opacity: var(--neon-31); }
+  64% {
+    opacity: var(--neon-32); }
+  66% {
+    opacity: var(--neon-33); }
+  68% {
+    opacity: var(--neon-34); }
+  70% {
+    opacity: var(--neon-35); }
+  72% {
+    opacity: var(--neon-36); }
+  74% {
+    opacity: var(--neon-37); }
+  76% {
+    opacity: var(--neon-38); }
+  78% {
+    opacity: var(--neon-39); }
+  80% {
+    opacity: var(--neon-40); }
+  82% {
+    opacity: var(--neon-41); }
+  84% {
+    opacity: var(--neon-42); }
+  86% {
+    opacity: var(--neon-43); }
+  88% {
+    opacity: var(--neon-44); }
+  90% {
+    opacity: var(--neon-45); }
+  92% {
+    opacity: var(--neon-46); }
+  94% {
+    opacity: var(--neon-47); }
+  96% {
+    opacity: var(--neon-48); }
+  98% {
+    opacity: var(--neon-49); }
+  100% {
+    opacity: var(--neon-50); } }
+
+.neon {
+  --neon-0: 0.33;
+  --neon-1: 0;
+  --neon-2: 1;
+  --neon-3: 0.33;
+  --neon-4: 0;
+  --neon-5: 0.33;
+  --neon-6: 1;
+  --neon-7: 0.33;
+  --neon-8: 0;
+  --neon-9: 1;
+  --neon-10: 1;
+  --neon-11: 0.33;
+  --neon-12: 1;
+  --neon-13: 0;
+  --neon-14: 1;
+  --neon-15: 0.33;
+  --neon-16: 0;
+  --neon-17: 0;
+  --neon-18: 0.33;
+  --neon-19: 1;
+  --neon-20: 0;
+  --neon-21: 1;
+  --neon-22: 0;
+  --neon-23: 0;
+  --neon-24: 0.33;
+  --neon-25: 0.33;
+  --neon-26: 1;
+  --neon-27: 0;
+  --neon-28: 1;
+  --neon-29: 0.33;
+  --neon-30: 0;
+  --neon-31: 0.33;
+  --neon-32: 1;
+  --neon-33: 0;
+  --neon-34: 1;
+  --neon-35: 0;
+  --neon-36: 0.33;
+  --neon-37: 1;
+  --neon-38: 0;
+  --neon-39: 1;
+  --neon-40: 0.33;
+  --neon-41: 0;
+  --neon-42: 1;
+  --neon-43: 1;
+  --neon-44: 0;
+  --neon-45: 0;
+  --neon-46: 1;
+  --neon-47: 0.33;
+  --neon-48: 1;
+  --neon-49: 0;
+  --neon-50: 0;
+  animation-name: neon;
+  animation-duration: 1.33s;
+  animation-timing-function: step-start;
+  animation-direction: alternate;
+  animation-play-state: running;
+  animation-iteration-count: infinite; }
+
 html {
   /* | for rem units, if 1rem = 10px -- 10/16 = 62.5% of default 16px */
   font-size: calc(10 / 16 * 100%); }

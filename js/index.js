@@ -38,6 +38,8 @@ window.onload = function (event) {
   //
   navBar();
   //
+  neon();
+  //
   window.addEventListener("scroll", function (event) {
     navBar();
     //
@@ -46,6 +48,8 @@ window.onload = function (event) {
     //  https://scotch.io/tutorials/implementing-a-scroll-based-animation-with-javascript
     //  https://blog.logrocket.com/use-scroll-linked-animations-right-way/
   });
+  //
+  //  ONLOAD END
   //
 };
 //
