@@ -6,7 +6,7 @@
   //
   align-items: flex-start;
   //
-  @include respond("phone") {
+  @include respond("portrait") {
     justify-content: center;
   }
   //
@@ -24,7 +24,12 @@
   .copyRight {
     grid-column: start / col-end 1;
     //
-    @include respond("phone") {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    //
+    @include respond("portrait") {
       grid-column: start / end;
       //
       text-align: center;
@@ -38,7 +43,7 @@
   p,
   .copyright,
   .acreditation__link {
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     color: inherit;
     //
   }
@@ -48,11 +53,11 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     //
     grid-column: col-start 3 / end;
     //
-    @include respond("phone") {
+    @include respond("portrait") {
       flex: 0 0 100%;
       justify-content: space-between;
       align-items: center;
@@ -68,7 +73,9 @@
     text-align: end;
     border-bottom: 1px solid var(--secondary);
     //
-    @include respond("phone") {
+    padding: 0.187em 0.375em;
+    //
+    @include respond("portait") {
       text-align: start;
       //
     }
@@ -77,9 +84,12 @@
   //
   p,
   .acreditation__link {
-    white-space: nowrap;
     display: block;
-    padding: 0.5rem 1rem;
+    //
+  }
+  //
+  .acreditation__link {
+    margin-top: 0.5em;
     //
   }
   //

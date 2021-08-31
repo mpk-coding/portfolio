@@ -12,7 +12,7 @@ function neon() {
 
   /*
 
-  for (let i = 0, x = 0; i <= 50; i++) {
+  for (let i = 0, x = 0; i <= 60; i++) {
     if (i == 0) {
       stepValue[i] = bracket[Math.floor(Math.random() * bracket.length)];
       //

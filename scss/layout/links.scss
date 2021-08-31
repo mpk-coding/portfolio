@@ -1,0 +1,53 @@
+.links {
+  //background-image: url("../img/vaporWave.svg");
+  //
+  align-content: stretch;
+  align-items: center;
+  justify-content: center;
+  //
+  padding: 6rem 0;
+  //
+  .img__container {
+    grid-column: content-start / content-end;
+    height: 0;
+    padding-top: 72rem;
+    max-width: 60rem;
+    width: calc(100% - 3rem * 2);
+    //
+    position: relative;
+    //
+    & > img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      //
+      object-fit: contain;
+      //
+    }
+    //
+  }
+  //
+}
+a.myWork__link {
+  font-weight: 900;
+  font-size: 200%;
+  background: var(--dark);
+  border: 0.0375em solid var(--light);
+  //
+  font-family: "Lobster Two";
+  //
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  //
+  transform: translate(-50%, -50%);
+  //
+  &:hover {
+    transform: translate(-50%, -50%) translateX(0.375em);
+    //
+  }
+  //
+}

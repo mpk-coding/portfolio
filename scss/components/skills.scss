@@ -4,9 +4,6 @@
     //
     padding: 3rem;
     //
-    font-family: "Overpass", sans-serif;
-    font-weight: 800;
-    //
   }
   //
   &__group {
@@ -22,10 +19,6 @@
     //
     & span {
       text-align: end;
-      //
-      font-size: 150%;
-      //
-      @include textShadow();
       //
       //
       //
@@ -101,9 +94,3 @@
   //
 }
 //
-.myWork__link {
-  grid-column: content-start / content-end;
-  //
-  margin-left: auto;
-  //
-}

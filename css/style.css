@@ -265,59 +265,60 @@ Breakpoints in EM units.
     opacity: var(--neon-50); } }
 
 .neon {
-  --neon-0: 0.33;
+  --neon-0: 0.66;
   --neon-1: 0;
   --neon-2: 1;
-  --neon-3: 0.33;
+  --neon-3: 0.66;
   --neon-4: 0;
-  --neon-5: 0.33;
+  --neon-5: 0.66;
   --neon-6: 1;
-  --neon-7: 0.33;
+  --neon-7: 0.66;
   --neon-8: 0;
   --neon-9: 1;
   --neon-10: 1;
-  --neon-11: 0.33;
+  --neon-11: 0.66;
   --neon-12: 1;
   --neon-13: 0;
   --neon-14: 1;
-  --neon-15: 0.33;
+  --neon-15: 0.66;
   --neon-16: 0;
   --neon-17: 0;
-  --neon-18: 0.33;
+  --neon-18: 0.66;
   --neon-19: 1;
   --neon-20: 0;
   --neon-21: 1;
   --neon-22: 0;
   --neon-23: 0;
-  --neon-24: 0.33;
-  --neon-25: 0.33;
+  --neon-24: 0.66;
+  --neon-25: 0.66;
   --neon-26: 1;
   --neon-27: 0;
   --neon-28: 1;
-  --neon-29: 0.33;
+  --neon-29: 0.66;
   --neon-30: 0;
-  --neon-31: 0.33;
+  --neon-31: 0.66;
   --neon-32: 1;
   --neon-33: 0;
   --neon-34: 1;
   --neon-35: 0;
-  --neon-36: 0.33;
+  --neon-36: 0.66;
   --neon-37: 1;
   --neon-38: 0;
   --neon-39: 1;
-  --neon-40: 0.33;
+  --neon-40: 0.66;
   --neon-41: 0;
   --neon-42: 1;
   --neon-43: 1;
   --neon-44: 0;
   --neon-45: 0;
   --neon-46: 1;
-  --neon-47: 0.33;
+  --neon-47: 0.66;
   --neon-48: 1;
   --neon-49: 0;
   --neon-50: 0;
+  font-family: "Neon", "Unica One", cursive;
   animation-name: neon;
-  animation-duration: 1.33s;
+  animation-duration: .84s;
   animation-timing-function: step-start;
   animation-direction: alternate;
   animation-play-state: running;
@@ -392,6 +393,10 @@ main {
   grid-column: start / end;
   padding: 0 6rem; }
 
+@font-face {
+  font-family: "Neon";
+  src: url("../fonts/Beon.otf"); }
+
 body {
   font-family: "Overpass", sans-serif;
   color: var(--white);
@@ -406,48 +411,48 @@ blockquote {
   text-decoration: none; }
 
 h1 {
-  font-family: "Overpass", sans-serif;
-  font-weight: 800; }
+  font-family: "Neon", sans-serif !important;
+  font-weight: 100; }
   h1 span {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit; }
 
 h2 {
-  font-family: "Overpass", sans-serif;
-  font-weight: 800; }
+  font-family: "Neon", sans-serif !important;
+  font-weight: 100; }
   h2 span {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit; }
 
 h3 {
-  font-family: "Overpass", sans-serif;
-  font-weight: 800; }
+  font-family: "Neon", sans-serif !important;
+  font-weight: 100; }
   h3 span {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit; }
 
 h4 {
-  font-family: "Overpass", sans-serif;
-  font-weight: 800; }
+  font-family: "Neon", sans-serif !important;
+  font-weight: 100; }
   h4 span {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit; }
 
 h5 {
-  font-family: "Overpass", sans-serif;
-  font-weight: 800; }
+  font-family: "Neon", sans-serif !important;
+  font-weight: 100; }
   h5 span {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit; }
 
 h6 {
-  font-family: "Overpass", sans-serif;
-  font-weight: 800; }
+  font-family: "Neon", sans-serif !important;
+  font-weight: 100; }
   h6 span {
     font-family: inherit;
     font-size: inherit;
@@ -464,10 +469,37 @@ h3, h4, h5, h6 {
 
 a, a:link, a:visited {
   color: var(--accentDark);
-  text-decoration: none; }
-
-a:hover {
-  color: var(--accentLight); }
+  text-decoration: none;
+  padding: 0.187em 0.375em;
+  position: relative;
+  z-index: 1;
+  max-width: calc(100% - 0.375em); }
+  a::after, a:link::after, a:visited::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--accentDark);
+    border-right: 0.25em solid var(--accentLight);
+    transform: scaleX(0);
+    transform-origin: right; }
+  a, a::after, a::before, a:link, a:link::after, a:link::before, a:visited, a:visited::after, a:visited::before {
+    transition-property: transform, color, background;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out; }
+  a::before, a:link::before, a:visited::before {
+    transition-timing-function: ease-in; }
+  a:hover, a:link:hover, a:visited:hover {
+    transform: translateX(0.375em);
+    padding: 0.187em calc(0.375em + 0.25em) 0.187em 0.375em;
+    color: var(--dark);
+    text-shadow: unset; }
+    a:hover::after, a:link:hover::after, a:visited:hover::after {
+      transform: scaleX(1); }
 
 .text--display {
   font-family: "Lobster Two", cursive !important; }
@@ -480,6 +512,13 @@ a:hover {
 
 .text--end {
   text-align: end; }
+
+.courses__list a,
+.skills__group span,
+.myWork__link {
+  font-family: "Overpass", sans-serif;
+  font-size: 125%;
+  font-weight: 400; }
 
 .navbar {
   position: fixed;
@@ -625,9 +664,7 @@ a:hover {
   text-align: center; }
 
 .skills__container {
-  padding: 3rem;
-  font-family: "Overpass", sans-serif;
-  font-weight: 800; }
+  padding: 3rem; }
 
 .skills__group {
   --size: 0.5rem;
@@ -638,9 +675,7 @@ a:hover {
   align-items: center;
   text-align: center; }
   .skills__group span {
-    text-align: end;
-    font-size: 150%;
-    text-shadow: -1px -1px 0 var(--dark), 1px -1px 0 var(--dark), -1px 1px 0 var(--dark), 1px 1px 0 var(--dark); }
+    text-align: end; }
     .skills__group span:not(:first-child) {
       margin-left: 2rem;
       position: relative; }
@@ -680,10 +715,6 @@ a:hover {
             transform: translate(-50%, -50%); } }
   .skills__group:not(:first-child) {
     margin-top: 1.5rem; }
-
-.myWork__link {
-  grid-column: content-start / content-end;
-  margin-left: auto; }
 
 .popcorn__container {
   grid-column: col-start 3 / end;
@@ -843,7 +874,8 @@ a:hover {
     grid-column: start / end;
     padding: 0 3rem;
     position: relative;
-    z-index: 1; }
+    z-index: 1;
+    height: 100%; }
     .courses__container::before {
       content: "";
       display: block; }
@@ -856,46 +888,54 @@ a:hover {
     font-size: 150%;
     font-family: "Unica One", cursive;
     display: inline-block;
-    padding-bottom: 3rem; }
-  .courses__list li {
-    display: inline-block;
-    max-width: calc(100% - 6rem); }
-  .courses__list li a {
-    display: block;
-    padding: .75rem 1.5rem;
-    margin-left: -1.5rem;
-    position: relative;
-    z-index: 1;
-    font-family: "Overpass", sans-serif;
-    font-size: 150%;
-    font-weight: 800;
-    text-shadow: -1px -1px 0 var(--dark), 1px -1px 0 var(--dark), -1px 1px 0 var(--dark), 1px 1px 0 var(--dark); }
-    .courses__list li a::after {
-      content: "";
+    padding-bottom: 2.25rem; }
+  .courses__list {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start; }
+    .courses__list li {
+      display: flex;
+      width: calc(100% + calc(0.375em + 0.25em));
+      margin-left: -0.375em; }
+    .courses__list h2:not(:first-child) {
+      margin-top: 6rem;
+      padding-bottom: 2.25rem; }
+
+.links {
+  align-content: stretch;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 0; }
+  .links .img__container {
+    grid-column: content-start / content-end;
+    height: 0;
+    padding-top: 72rem;
+    max-width: 60rem;
+    width: calc(100% - 3rem * 2);
+    position: relative; }
+    .links .img__container > img {
       position: absolute;
-      z-index: -1;
-      top: 0;
-      right: 0;
-      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 100%;
       height: 100%;
-      background: var(--accentDark);
-      border-right: 1rem solid var(--accentLight);
-      transform: scaleX(0);
-      transform-origin: right; }
-  .courses__list li,
-  .courses__list li a,
-  .courses__list li a::after {
-    transition-property: transform, color, background;
-    transition-duration: .2s;
-    transition-timing-function: ease-out; }
-  .courses__list li:hover {
-    transform: translateX(1.5rem); }
-    .courses__list li:hover a {
-      color: var(--dark);
-      text-shadow: unset; }
-    .courses__list li:hover a::after {
-      transform: scaleX(1); }
+      object-fit: contain; }
+
+a.myWork__link {
+  font-weight: 900;
+  font-size: 200%;
+  background: var(--dark);
+  border: 0.0375em solid var(--light);
+  font-family: "Lobster Two";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  a.myWork__link:hover {
+    transform: translate(-50%, -50%) translateX(0.375em); }
 
 .footer {
   border-top: 1px solid currentColor;
@@ -908,7 +948,7 @@ a:hover {
   align-items: flex-start;
   padding: 2rem;
   color: inherit; }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 56.25em) {
     .footer {
       justify-content: center; } }
   .footer > * {
@@ -916,24 +956,28 @@ a:hover {
     min-height: unset;
     width: 100%; }
   .footer .copyRight {
-    grid-column: start / col-end 1; }
-    @media only screen and (max-width: 37.5em) {
+    grid-column: start / col-end 1;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center; }
+    @media only screen and (max-width: 56.25em) {
       .footer .copyRight {
         grid-column: start / end;
         text-align: center; } }
   .footer p,
   .footer .copyright,
   .footer .acreditation__link {
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     color: inherit; }
   .footer .acreditation__container {
     margin-left: auto;
     display: flex;
     flex-flow: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     grid-column: col-start 3 / end; }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 56.25em) {
       .footer .acreditation__container {
         flex: 0 0 100%;
         justify-content: space-between;
@@ -943,15 +987,13 @@ a:hover {
   .footer .acreditation__caption {
     flex: 0 0 100%;
     text-align: end;
-    border-bottom: 1px solid var(--secondary); }
-    @media only screen and (max-width: 37.5em) {
-      .footer .acreditation__caption {
-        text-align: start; } }
+    border-bottom: 1px solid var(--secondary);
+    padding: 0.187em 0.375em; }
   .footer p,
   .footer .acreditation__link {
-    white-space: nowrap;
-    display: block;
-    padding: 0.5rem 1rem; }
+    display: block; }
+  .footer .acreditation__link {
+    margin-top: 0.5em; }
 
 .clearfix::after {
   content: "";
