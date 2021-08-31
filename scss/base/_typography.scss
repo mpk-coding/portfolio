@@ -62,7 +62,7 @@ a {
   &,
   &:link,
   &:visited {
-    color: var(--accentDark);
+    color: var(--accentLight);
     text-decoration: none;
     //
     padding: 0.187em 0.375em;
@@ -87,8 +87,8 @@ a {
       width: 100%;
       height: 100%;
       //
-      background: var(--accentDark);
-      border-right: 0.25em solid var(--accentLight);
+      background: var(--accentLight);
+      border-right: 0.25em solid var(--accentDark);
       //
       transform: scaleX(0);
       transform-origin: right;

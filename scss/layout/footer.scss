@@ -21,13 +21,14 @@
     //
   }
   //
-  .copyRight {
+  .copyright {
     grid-column: start / col-end 1;
     //
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+    & a {
+      display: inline-block;
+      //
+      font-size: 100%;
+    }
     //
     @include respond("portrait") {
       grid-column: start / end;
@@ -44,7 +45,6 @@
   .copyright,
   .acreditation__link {
     font-size: 2.4rem;
-    color: inherit;
     //
   }
   //
