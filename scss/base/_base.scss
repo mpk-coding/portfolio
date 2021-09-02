@@ -23,7 +23,27 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   background-color: var(--dark);
+  //
+  position: relative;
+  //
+  //
+  //
+  &::after {
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    filter: contrast(0.75);
+    opacity: 0.33;
+    background: black;
+    pointer-events: none;
+    //
+  }
   //
 }
 

@@ -103,7 +103,7 @@ a {
     &,
     &::after,
     &::before {
-      transition-property: transform, color, background;
+      transition-property: transform, color, background, padding;
       transition-duration: 0.2s;
       transition-timing-function: ease-out;
       //

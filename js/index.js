@@ -36,6 +36,7 @@ window.onload = function (event) {
   //
   //  VIDEO END
   //
+  initObserver();
   navBar();
   //
   neon();

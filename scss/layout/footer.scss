@@ -1,4 +1,5 @@
 .footer {
+  font-weight: 400;
   //
   border-top: 1px solid currentColor;
   //
@@ -23,6 +24,15 @@
   //
   .copyright {
     grid-column: start / col-end 1;
+    display: flex;
+    align-items: center;
+    //
+    &__date {
+      font-size: inherit;
+      color: var(--white);
+      padding: 0.25em 0;
+      border-radius: 2px;
+    }
     //
     & a {
       display: inline-block;
@@ -33,6 +43,7 @@
     @include respond("portrait") {
       grid-column: start / end;
       //
+      flex-flow: column;
       text-align: center;
       //
     }

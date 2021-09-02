@@ -35,6 +35,7 @@ function neon() {
               //
               x = 0;
               //
+              continue
             }
             //
           }
@@ -63,7 +64,6 @@ function neon() {
   let targetsList = document.querySelectorAll(".neon");
   //
   targetsList.forEach(function (currentValue) {
-    console.log(currentValue);
     //
     let duration = 1;
     let delay = Math.random() * (duration - 0) + 0;

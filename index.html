@@ -11,25 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital@0;1&family=Overpass:wght@100;300;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;600;800&display=swap"
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Monofett&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap"
       rel="stylesheet"
     />
     <!--  CSS  -->
@@ -39,6 +27,7 @@
     <script src="js/index.js"></script>
     <script src="js/alternateVideos.js"></script>
     <script src="js/neon.js"></script>
+    <script src="js/intersectionObserver.js"></script>
   </head>
   <body>
     <header class="navbar">
@@ -50,23 +39,26 @@
     </header>
     <main class="layout grid__container">
       <section class="content content--full landing background__videoContainer">
-        <!--
-        <div class="container landing__container">
-          <h1 class="landing__heading">MPK<span>coding</span></h1>
-        </div>
-      -->
         <video
           muted
-          src="vid/rainbowCenter.mp4"
           class="background__video"
           data-video="1"
-        ></video>
+          poster="img/rainbowCenter_static.png"
+        >
+          <source src="vid/rainbowCenter.mp4" ` type="video/mp4" />
+          <source src="vid/rainbowCenter.webm" ` type="video/webm" />
+          <img src="img/rainbowCenter_static.png" alt="Neon rainbow" />
+        </video>
         <video
           muted
-          src="vid/rainbowCenter.mp4"
           class="background__video background__video--hidden"
           data-video="2"
-        ></video>
+          poster="img/rainbowCenter_static.png"
+        >
+          <source src="vid/rainbowCenter.mp4" ` type="video/mp4" />
+          <source src="vid/rainbowCenter.webm" ` type="video/webm" />
+          <img src="img/rainbowCenter_static.png" alt="Neon rainbow" />
+        </video>
       </section>
       <section class="content about">
         <div class="container about__headingContainer">
@@ -124,8 +116,10 @@
         </div>
         <div class="container stack__captionContainer">
           <p class="text--thin">
-            Accumulated through personal voyages and following Udemy courses.
-            Bless StackOverflow, MDN and W3 while I'm at it.
+            Accumulated through personal voyages and following Udemy courses
+            <br />
+            Bless Stack&nbsp;Overflow, MDN, W3Schools, Udemy and my family while
+            I'm at it.
           </p>
         </div>
       </section>
@@ -178,20 +172,24 @@
         </div>
       </section>
       <section class="content content--full links">
-        <a
-          target="__blank"
-          href="https://github.com/mpk-coding?tab=repositories"
-          class="myWork__link"
-          >GitHub</a
-        >
-        <div class="img__container">
-          <img src="img/vaporWave.svg" alt="vapor wave sun" />
+        <div class="img__wrap fadeUp">
+          <div class="link__wrap">
+            <a
+              target="__blank"
+              href="https://github.com/mpk-coding?tab=repositories"
+              class="myWork__link"
+              >GitHub</a
+            >
+          </div>
+          <div class="img__container">
+            <img src="img/vaporWave.svg" alt="vapor wave sun" />
+          </div>
         </div>
       </section>
     </main>
     <footer class="footer">
       <p class="copyright">
-        &copy; 2021 |
+        <span class="copyright__date">&copy; 2021</span>
         <a
           target="__blank"
           class="copyright__link"
@@ -200,7 +198,7 @@
         >
       </p>
       <div class="acreditation__container">
-        <p class="acreditation__caption">Sources</p>
+        <p class="acreditation__caption">Attributions</p>
         <a
           target="__blank"
           href="https://www.pexels.com/pl-pl/video/projekt-czarne-tlo-neon-sztuka-neonowa-5820391/"

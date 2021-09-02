@@ -17,54 +17,54 @@
   //
   //  GENERATED VIA JS
   //
-  --neon-0: 0.66;
+  --neon-0: 0.9;
   --neon-1: 0;
   --neon-2: 1;
-  --neon-3: 0.66;
+  --neon-3: 0.9;
   --neon-4: 0;
-  --neon-5: 0.66;
+  --neon-5: 0.9;
   --neon-6: 1;
-  --neon-7: 0.66;
+  --neon-7: 0.9;
   --neon-8: 0;
   --neon-9: 1;
   --neon-10: 1;
-  --neon-11: 0.66;
+  --neon-11: 0.9;
   --neon-12: 1;
   --neon-13: 0;
   --neon-14: 1;
-  --neon-15: 0.66;
+  --neon-15: 0.9;
   --neon-16: 0;
   --neon-17: 0;
-  --neon-18: 0.66;
+  --neon-18: 0.9;
   --neon-19: 1;
   --neon-20: 0;
   --neon-21: 1;
   --neon-22: 0;
   --neon-23: 0;
-  --neon-24: 0.66;
-  --neon-25: 0.66;
+  --neon-24: 0.9;
+  --neon-25: 0.9;
   --neon-26: 1;
   --neon-27: 0;
   --neon-28: 1;
-  --neon-29: 0.66;
+  --neon-29: 0.9;
   --neon-30: 0;
-  --neon-31: 0.66;
+  --neon-31: 0.9;
   --neon-32: 1;
   --neon-33: 0;
   --neon-34: 1;
   --neon-35: 0;
-  --neon-36: 0.66;
+  --neon-36: 0.9;
   --neon-37: 1;
   --neon-38: 0;
   --neon-39: 1;
-  --neon-40: 0.66;
+  --neon-40: 0.9;
   --neon-41: 0;
   --neon-42: 1;
   --neon-43: 1;
   --neon-44: 0;
   --neon-45: 0;
   --neon-46: 1;
-  --neon-47: 0.66;
+  --neon-47: 0.9;
   --neon-48: 1;
   --neon-49: 0;
   --neon-50: 0;
@@ -72,10 +72,22 @@
   font-family: "Neon", "Unica One", cursive;
   //
   animation-name: neon;
-  animation-duration: .84s;
+  animation-duration: 0.84s;
   animation-timing-function: step-start;
   animation-direction: alternate;
   animation-play-state: running;
   animation-iteration-count: infinite;
+  //
+}
+//
+.fadeUp {
+  //
+  opacity: 0;
+  top: 200px;
+  //
+  transition-property: opacity, transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
   //
 }
