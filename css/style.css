@@ -897,7 +897,8 @@ a, a:link, a:visited {
   overflow: visible;
   z-index: 2;
   position: relative;
-  align-content: flex-start; }
+  align-content: flex-start;
+  min-height: unset; }
   .courses__container {
     grid-column: start / end;
     padding: 0 3rem;
@@ -937,7 +938,7 @@ a, a:link, a:visited {
   align-content: stretch;
   align-items: center;
   justify-content: center;
-  padding: 18rem 0; }
+  padding: 6rem 0 18rem; }
   .links .img__wrap {
     grid-column: content-start / content-end;
     width: 100%;

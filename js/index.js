@@ -1,4 +1,10 @@
 window.onload = function (event) {
+  //  restore scroll
+  window.scroll({
+    left: 0,
+    top: window.localStorage.scroll,
+    behavior: "smooth",
+  });
   //
   console.log("index.js - Document loaded");
   //
@@ -81,6 +87,8 @@ function navBar() {
   //
   //
   this.oldScroll = this.scrollY;
+  //
+  window.localStorage.scroll = this.scrollY;
   //
 }
 //
