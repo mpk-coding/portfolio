@@ -551,18 +551,19 @@ a, a:link, a:visited {
   top: 0;
   left: 0;
   width: 100%;
+  padding: 2rem;
   color: var(--white);
-  transition-property: padding, color, background, backdrop-filter;
-  transition-duration: 0.5s;
+  mix-blend-mode: normal;
+  transition-property: padding, color, background;
+  transition-duration: 0.2s;
   transition-timing-function: ease-out; }
   .navbar * {
-    transition-property: padding, color, background, backdrop-filter;
+    transition-property: padding, color, background;
     transition-duration: 0.2s;
     transition-timing-function: ease-out; }
   .navbar--background {
-    background: var(--dark);
-    backdrop-filter: brightness(0); }
-  .navbar:hover {
+    background: var(--dark); }
+  .navbar:not([class*="background"]):hover {
     mix-blend-mode: screen; }
 
 .nav {
@@ -603,7 +604,8 @@ a, a:link, a:visited {
     display: flex;
     align-items: center;
     color: inherit;
-    padding-bottom: 0.175em; }
+    padding-bottom: 0.175em;
+    font-size: 3.2rem; }
 
 .landing {
   background: black;

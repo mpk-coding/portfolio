@@ -6,16 +6,18 @@
   left: 0;
   //
   width: 100%;
+  padding: 2rem;
   //
   color: var(--white);
   //
-  transition-property: padding, color, background, backdrop-filter;
-  transition-duration: 0.5s;
+  mix-blend-mode: normal;
+  //
+  transition-property: padding, color, background;
+  transition-duration: 0.2s;
   transition-timing-function: ease-out;
   //
-  //
   & * {
-    transition-property: padding, color, background, backdrop-filter;
+    transition-property: padding, color, background;
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
     //
@@ -25,13 +27,12 @@
   //
   &--background {
     background: var(--dark);
-    backdrop-filter: brightness(0);
     //
   }
   //
   //
   //
-  &:hover {
+  &:not([class*="background"]):hover {
     mix-blend-mode: screen;
     //
   }
@@ -117,6 +118,8 @@
     color: inherit;
     //
     padding-bottom: 0.175em;
+    //
+    font-size: 3.2rem;
     //
   }
   //
