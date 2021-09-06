@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   //
-  padding: 6rem 0 18rem;
+  padding: 6rem 0 24rem;
   //
   .img__wrap {
     grid-column: content-start / content-end;
@@ -63,12 +63,16 @@ a.myWork__link {
   font-size: 200%;
   max-width: 100%;
   background: var(--dark);
-  border: 0.0375em solid var(--light);
   //
   font-family: "Lobster Two";
   //
+  padding: 0.187em 0.375em 0.187em 0.375em;
   &:hover {
     transform: translateX(0.375em);
+    //
+    border: none;
+    //
+    padding: 0.187em 0.375em 0.187em 0.375em;
     //
   }
   //

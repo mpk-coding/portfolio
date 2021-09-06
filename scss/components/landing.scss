@@ -1,44 +1,24 @@
 .landing {
-  background: black;
   align-content: flex-end;
   //
   min-height: unset;
   height: calc(100vh - calc(14rem));
+  mix-blend-mode: screen;
   //
   //
   //
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
+  &__img {
     position: absolute;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to top, #0affda, #0affda);
-    mix-blend-mode: color;
-    //
-  }
-  &::after {
-    content: "";
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
+    max-width: 30rem;
     height: 100%;
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to top, var(--dark) 0%, transparent 300%);
-    mix-blend-mode: screen;
+    object-fit: contain;
+    z-index: 0;
     //
-  }
-  //
-  & video {
-    object-position: 50% calc(50% + 6rem);
-    //
-    @include respond("portrait") {
-      object-fit: contain;
-      //
-    }
+    filter: brightness(0.5);
     //
   }
   //

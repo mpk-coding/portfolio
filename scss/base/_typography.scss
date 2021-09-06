@@ -13,7 +13,7 @@ body {
 }
 //
 p {
-  line-height: 1.2;
+  line-height: 1.4;
   //
 }
 //
@@ -70,7 +70,7 @@ a {
     color: var(--accentLight);
     text-decoration: none;
     //
-    padding: 0.187em 0.375em;
+    padding: calc(0.187em * 2) 0.375em 0.187em 0.375em;
     //
     position: relative;
     z-index: 1;
@@ -85,11 +85,11 @@ a {
       position: absolute;
       z-index: -1;
       top: 0;
-      right: 0;
+      left: 0;
       //
       display: block;
       //
-      width: 100%;
+      width: calc(100% + 0.25em);
       height: 100%;
       //
       background: var(--accentLight);
@@ -116,7 +116,7 @@ a {
     //
     &:hover {
       transform: translateX(0.375em);
-      padding: 0.187em calc(0.375em + 0.25em) 0.187em 0.375em;
+      padding: calc(0.187em * 2) 0.375em 0.187em 0.375em;
       //
       color: var(--dark);
       //

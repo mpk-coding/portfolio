@@ -1,17 +1,46 @@
-function initObserver() {
-  let opacity = 0;
-  let top = 200;
-  document.querySelectorAll(".fadeUp").forEach(function (currentValue) {
-    currentValue.style.opacity = opacity;
-    currentValue.style.top = top + "px";
-    //
-  });
+let wait = false;
+const throttle = function (throttleThis, interval) {
+  if (wait) {
+    return;
+  }
   //
+  wait = true;
+  setTimeout(function () {
+    wait = false;
+    throttleThis();
+    //
+  }, interval);
+  //
+};
+//
+let timer;
+const debounce = function (func, delay) {
+  //
+  clearTimeout(timer);
+  timer = setTimeout(func, delay);
+  //
+};
+//
+function initObserver() {
+  //
+  let opacity = 0;
+  let top =
+    10 *
+    Number(
+      getComputedStyle(document.querySelector("html"))
+        .getPropertyValue("font-size")
+        .match(/(\d)*/i)[0] * 2
+    );
+  //
+  let prevScroll;
   let prevRatio = 0.0;
-  let steps = 100;
-  let navbarHeight = window
+  let steps = 50;
+  //
+  let scale = window
     .getComputedStyle(document.querySelector(".navbar"))
     .getPropertyValue("font-size");
+  let navbarHeight = 9.76 * scale.match(/(\d)*/i)[0] + "px";
+  //
   let options = {
     root: null,
     rootMargin: `${navbarHeight} 0px 0px 0px`,
@@ -20,54 +49,70 @@ function initObserver() {
   //
   //
   //
-  let targets = document.querySelectorAll(
-    "section:not([class*='links']), .fadeUp"
-  );
+  let targets = document.querySelectorAll(".fadeUp, .fadeLeft, .fadeRight");
   //
   let observer;
   //
+  observer = new IntersectionObserver(intersectionHandler, options);
+  targets.forEach(function (currentValue) {
+    observer.observe(currentValue);
+    //
+  });
   function intersectionHandler(entries, observer) {
     //
     entries.forEach((entry) => {
       //  gitHub vaporWave link - section.links
-      if (
-        entry.target.getAttribute("class").match(/(fadeUp)/i) &&
-        !entry.target.tagName.match(/(a)/i)
-      ) {
+      if (entry.target.classList.contains("fadeUp")) {
         //  scroll down
+        if (!prevScroll) {
+          document.querySelectorAll(".fadeUp").forEach(function (currentValue) {
+            if (entry.intersectionRatio > 0.9) {
+              currentValue.style.opacity = 1;
+              //
+              currentValue.style.top = 0 + "px";
+              //
+            } else {
+              currentValue.style.opacity = Number(
+                entry.intersectionRatio.toFixed(2)
+              );
+              //
+              currentValue.style.top =
+                Number(entry.intersectionRatio.toFixed(2)) * -top + top + "px";
+              //
+            }
+            //
+          });
+          //
+        }
         if (window.scrollY > prevScroll) {
           //
           if (Number(entry.intersectionRatio.toFixed(2)) > prevRatio) {
             document
               .querySelectorAll(".fadeUp")
               .forEach(function (currentValue) {
-                currentValue.style.opacity = Number(
-                  entry.intersectionRatio.toFixed(2)
-                );
-                //
-                currentValue.style.top =
-                  Number(entry.intersectionRatio.toFixed(2)) * -top +
-                  top +
-                  "px";
+                if (entry.intersectionRatio > 0.9) {
+                  currentValue.style.opacity = 1;
+                  //
+                  currentValue.style.top = 0 + "px";
+                  //
+                } else {
+                  currentValue.style.opacity = Number(
+                    entry.intersectionRatio.toFixed(2)
+                  );
+                  //
+                  currentValue.style.top =
+                    Number(entry.intersectionRatio.toFixed(2)) * -top +
+                    top +
+                    "px";
+                  //
+                }
                 //
               });
             //
-            if (Number(entry.intersectionRatio.toFixed(2)) >= 0.9) {
-              document
-                .querySelectorAll(".fadeUp")
-                .forEach(function (currentValue) {
-                  currentValue.style.opacity = 1;
-                  //
-                  currentValue.style.top = "0px";
-                  //
-                });
-              //
-            }
-            //
           }
-          //  scroll up
-        } else if (window.scrollY < prevScroll) {
           //
+        } else if (window.scrollY < prevScroll) {
+          //  scroll up
           if (entry.intersectionRatio < prevRatio) {
             document
               .querySelectorAll(".fadeUp")
@@ -84,64 +129,89 @@ function initObserver() {
           }
           //
         }
-        //  fast scroll case
-        setTimeout(function () {
+        //
+        prevScroll = window.scrollY;
+        //
+      } else {
+        if (entry.boundingClientRect.top <= 0) {
+          entry.target.classList.add("shown");
+        }
+        if (entry.intersectionRatio > 0) {
+          if (entry.target.classList.contains("fadeLeft")) {
+            //
+            entry.target.classList.add("shown");
+          }
+          //
+          if (entry.target.classList.contains("fadeRight")) {
+            //
+            entry.target.classList.add("shown");
+          }
+          //
+        }
+        //
+      }
+      //
+      debounce(function () {
+        console.log("debounce");
+        //  scroll down
+        if (entry.target.classList.contains("fadeUp")) {
           if (entry.boundingClientRect.top <= 0) {
             document
               .querySelectorAll(".fadeUp")
               .forEach(function (currentValue) {
-                currentValue.style.top = "0px";
+                currentValue.style.opacity = 1;
                 //
-                setTimeout(function () {
-                  currentValue.style.opacity = 1;
-                  //
-                }, 150);
+                currentValue.style.top = "0px";
                 //
               });
             //
-          } else {
+          }
+          //  scroll up
+          if (entry.boundingClientRect.top >= window.innerHeight) {
             document
               .querySelectorAll(".fadeUp")
               .forEach(function (currentValue) {
-                currentValue.style.opacity = Number(
-                  entry.intersectionRatio.toFixed(2)
-                );
+                currentValue.style.opacity = 0;
                 //
-                currentValue.style.top =
-                  Number(entry.intersectionRatio.toFixed(2)) * -top +
-                  top +
-                  "px";
+                currentValue.style.top = top + "px";
                 //
               });
             //
           }
           //
-        }, 10);
-      }
+        } else {
+          //
+          if (entry.intersectionRatio > 0) {
+            if (entry.target.classList.contains("fadeLeft")) {
+              //
+              entry.target.classList.add("shown");
+            }
+            //
+            if (entry.target.classList.contains("fadeRight")) {
+              //
+              entry.target.classList.add("shown");
+            }
+            //
+          }
+        }
+        //
+      }, 36);
       //
       prevRatio = entry.intersectionRatio;
-      prevScroll = window.scrollY;
       //
     });
     //
   }
   //
-  observer = new IntersectionObserver(intersectionHandler, options);
-  targets.forEach(function (currentValue) {
-    observer.observe(currentValue);
-    //
-  });
-  //
-  function thresholds(steps) {
-    let array = [];
-    for (i = 0; i <= steps; i++) {
-      array.push(i / steps);
-      //
-    }
-    //
-    return array;
+}
+//
+function thresholds(steps) {
+  let array = [];
+  for (i = 0; i <= steps; i++) {
+    array.push(i / steps);
     //
   }
   //
+  return array;
+  //
 }
-//

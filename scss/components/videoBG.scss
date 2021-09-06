@@ -4,12 +4,6 @@
   //
   border-top: 1px solid var(--secondary);
   //
-  & > *:not(.background__video) {
-    position: relative;
-    z-index: 1;
-    //
-  }
-  //
 }
 //
 .background__video {

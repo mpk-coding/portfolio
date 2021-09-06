@@ -39,26 +39,12 @@
     </header>
     <main class="layout grid__container">
       <section class="content content--full landing background__videoContainer">
-        <video
-          muted
-          class="background__video"
-          data-video="1"
-          poster="img/rainbowCenter_static.png"
-        >
-          <source src="vid/rainbowCenter.mp4" ` type="video/mp4" />
-          <source src="vid/rainbowCenter.webm" ` type="video/webm" />
-          <img src="img/rainbowCenter_static.png" alt="Neon rainbow" />
-        </video>
-        <video
-          muted
-          class="background__video background__video--hidden"
-          data-video="2"
-          poster="img/rainbowCenter_static.png"
-        >
-          <source src="vid/rainbowCenter.mp4" ` type="video/mp4" />
-          <source src="vid/rainbowCenter.webm" ` type="video/webm" />
-          <img src="img/rainbowCenter_static.png" alt="Neon rainbow" />
-        </video>
+        <img
+          class="landing__img neon"
+          src="img/rainbowSVG.svg"
+          alt="neon rainbow"
+        />
+        <div class="landing__neon neon"></div>
       </section>
       <section class="content about">
         <div class="container about__headingContainer">
@@ -82,9 +68,9 @@
             </p>
             <p>
               It's something I'd gladly do for a living, hence this portfolio. I
-              hope it helps me land my junior job.<br />
-              <span class="text--light neon">XOXO</span>
+              hope it helps me land my junior job.
             </p>
+            <span class="text--light neon fadeLeft">XOXO</span>
           </div>
         </div>
       </section>
@@ -96,17 +82,17 @@
         </div>
         <div class="container skills__container">
           <div class="skills__content">
-            <div class="skills__group">
+            <div class="skills__group fadeRight">
               <span>HTML5</span>
               <span>CSS3</span>
               <span>SCSS</span>
               <span>Bootstrap</span>
             </div>
-            <div class="skills__group">
+            <div class="skills__group fadeRight">
               <span>JavaScript</span>
               <span>jQuery</span>
             </div>
-            <div class="skills__group">
+            <div class="skills__group fadeRight">
               <span>PHP</span>
               <span>MySQL</span>
               <span>Wordpress</span>
@@ -115,7 +101,7 @@
           </div>
         </div>
         <div class="container stack__captionContainer">
-          <p class="text--thin">
+          <p class="text--thin fadeLeft">
             Accumulated through personal voyages and following Udemy courses
             <br />
             Bless Stack&nbsp;Overflow, MDN, W3Schools, Udemy and my family while
@@ -131,14 +117,14 @@
         </div>
         <div class="container courses__container">
           <ul class="courses__list">
-            <li>
+            <li class="fadeLeft">
               <a
                 target="__blank"
                 href="https://www.udemy.com/course/advanced-css-and-sass/"
                 >Advanced CSS and Sass</a
               >
             </li>
-            <li>
+            <li class="fadeLeft">
               <a
                 target="__blank"
                 href="https://www.udemy.com/course/the-complete-web-developer-course-2/"
@@ -146,7 +132,7 @@
               >
             </li>
             <h2><span class="neon text--light">Currently</span> on</h2>
-            <li>
+            <li class="fadeLeft">
               <a
                 target="__blank"
                 href="https://www.udemy.com/course/the-complete-web-development-bootcamp/"
@@ -154,14 +140,14 @@
               >
             </li>
             <h2>Shortly <span class="neon text--light">after</span></h2>
-            <li>
+            <li class="fadeLeft">
               <a
                 target="__blank"
                 href="https://www.udemy.com/course/the-complete-javascript-course/"
                 >The Complete JavaScript Course 2021</a
               >
             </li>
-            <li>
+            <li class="fadeLeft">
               <a
                 target="__blank"
                 href="https://www.udemy.com/course/learn-laravel-vuejs-from-scratch-build-a-tesla-web-app/"
@@ -176,7 +162,7 @@
           <div class="link__wrap">
             <a
               target="__blank"
-              href="https://github.com/mpk-coding?tab=repositories"
+              href="https://github.com/mpk-coding"
               class="myWork__link"
               >GitHub</a
             >

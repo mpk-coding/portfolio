@@ -80,14 +80,69 @@
   //
 }
 //
-.fadeUp {
+.fade {
+  &Up,
+  &Left,
+  &Right {
+    position: relative;
+    z-index: 1;
+    //
+  }
   //
-  opacity: 0;
-  top: 200px;
+  &Up {
+    //
+    transition-property: opacity, top;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+    //
+  }
   //
-  transition-property: opacity, transform;
-  transition-duration: 0.15s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
+  &Left,
+  &Right {
+    transition-property: filter, left, right;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+    //
+    &,
+    &a {
+      &:link,
+      &:visited {
+        transition-property: filter, left, right, transform, color, background,
+          padding;
+        transition-duration: 0.5s, 0.5s, 0.5s, 0.2s;
+        //
+      }
+      //
+    }
+    //
+  }
+  //
+  &Left {
+    //
+    left: -10rem;
+    filter: opacity(0);
+    //
+    &.shown {
+      left: 0;
+      filter: opacity(1);
+      //
+    }
+    //
+  }
+  //
+  &Right {
+    //
+    right: -10rem;
+    filter: opacity(0);
+    //
+    &.shown {
+      right: 0;
+      filter: opacity(1);
+      //
+    }
+    //
+  }
   //
 }

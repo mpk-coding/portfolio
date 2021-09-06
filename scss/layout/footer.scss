@@ -1,4 +1,5 @@
 .footer {
+  background: var(--dark);
   font-weight: 400;
   //
   border-top: 1px solid currentColor;
@@ -6,9 +7,12 @@
   @include grid;
   //
   align-items: flex-start;
+  text-align: start;
   //
   @include respond("portrait") {
-    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    //
   }
   //
   padding: 2rem;
@@ -18,7 +22,6 @@
   & > * {
     text-decoration: none;
     min-height: unset;
-    width: 100%;
     //
   }
   //
@@ -26,18 +29,26 @@
     grid-column: start / col-end 1;
     display: flex;
     align-items: center;
+    justify-self: flex-start;
+    //
+    span {
+      padding: calc(0.187em * 2) 0.375em 0.187em 0.375em;
+      //
+    }
     //
     &__date {
       font-size: inherit;
       color: var(--white);
       padding: 0.25em 0;
       border-radius: 2px;
+      //
     }
     //
     & a {
       display: inline-block;
       //
       font-size: 100%;
+      //
     }
     //
     @include respond("portrait") {
@@ -45,6 +56,7 @@
       //
       flex-flow: column;
       text-align: center;
+      justify-self: center;
       //
     }
     //
@@ -68,13 +80,17 @@
     //
     grid-column: col-start 3 / end;
     //
+    width: 100%;
+    //
     @include respond("portrait") {
       flex: 0 0 100%;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      margin-top: 1rem;
+      text-align: center;
+      margin: 2rem auto 0;
       //
       grid-column: start / end;
+      //
     }
     //
   }
@@ -87,7 +103,7 @@
     padding: 0.187em 0.375em;
     //
     @include respond("portait") {
-      text-align: start;
+      text-align: center;
       //
     }
     //

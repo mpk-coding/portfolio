@@ -10,6 +10,7 @@ window.onload = function (event) {
   //
   //  VIDEO
   //
+  /*
   let bgVideo = document.querySelector(".background__video");
   bgVideo.load();
   //
@@ -39,7 +40,7 @@ window.onload = function (event) {
     },
     {once: true}
   );
-  //
+  */
   //  VIDEO END
   //
   initObserver();
