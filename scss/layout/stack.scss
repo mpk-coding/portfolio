@@ -4,7 +4,7 @@
   //
   //
   &__heading {
-    font-family: 'Unica One', cursive;
+    font-family: "Unica One", cursive;
     //
   }
   //
@@ -43,5 +43,117 @@
   }
   //
   //
+  //
+}
+//
+.skills {
+  &__content,
+  &__content tr,
+  &__content th {
+    width: 100%;
+    //
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    //
+    th,
+    td {
+      padding: 0;
+      //
+      &:not(:first-child) {
+        margin-top: 0.5rem;
+        //
+      }
+      //
+      &.skills__description {
+        margin-top: 1rem;
+        //
+      }
+      //
+    }
+    //
+    //
+    //
+    thead,
+    tbody {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      //
+    }
+    //
+    thead tr,
+    tbody tr {
+      flex: 0 0 calc(100% / 3);
+      //
+      padding: 4rem 0 0 4rem;
+      //
+    }
+    //
+    thead tr th:last-child {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--white);
+      //
+    }
+    //
+  }
+  //
+  &__name {
+    font-weight: 600;
+    //
+  }
+  //
+  &__content {
+    @include respond("portrait") {
+      //
+      thead tr,
+      tbody tr {
+        flex: 0 0 calc(100% / 2);
+        //
+      }
+      //
+    }
+    //
+    @include respond("phone") {
+      thead tr,
+      tbody tr {
+        flex: 0 0 100%;
+        //
+      }
+      //
+    }
+    //
+  }
+  //
+}
+//
+.star,
+.skills__head .stars {
+  color: var(--light);
+  //
+}
+//
+.star {
+  display: inline-block;
+  font-size: inherit;
+  //
+  &--full {
+    &::after {
+      content: "\2605";
+      //
+    }
+    //
+  }
+  //
+  &--empty {
+    &::after {
+      content: "\2606";
+      //
+      color: var(--white);
+      opacity: 0.33;
+      //
+    }
+    //
+  }
   //
 }

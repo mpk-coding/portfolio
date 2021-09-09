@@ -340,7 +340,7 @@ Breakpoints in EM units.
   transition-timing-function: ease-out;
   transition-delay: 0s; }
   .fadeLeft:link, .fadeLeft:visited, .fadeLefta:link, .fadeLefta:visited, .fadeRight:link, .fadeRight:visited, .fadeRighta:link, .fadeRighta:visited {
-    transition-property: filter, left, right, transform, color, background, padding;
+    transition-property: filter, left, right, transform, color, background, padding;
     transition-duration: 0.5s, 0.5s, 0.5s, 0.2s; }
 
 .fadeLeft {
@@ -873,7 +873,7 @@ a, a:link, a:visited {
 .stack {
   align-content: flex-start; }
   .stack__heading {
-    font-family: 'Unica One', cursive; }
+    font-family: "Unica One", cursive; }
   .stack .container {
     grid-column: col-start 2 / end;
     text-align: end;
@@ -889,6 +889,84 @@ a, a:link, a:visited {
         color: var(--white); }
     .stack .container.stack__captionContainer {
       margin-top: 3rem; }
+
+.skills__content,
+.skills__content tr,
+.skills__content th {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end; }
+  .skills__content th,
+  .skills__content td,
+  .skills__content tr th,
+  .skills__content tr td,
+  .skills__content th th,
+  .skills__content th td {
+    padding: 0; }
+    .skills__content th:not(:first-child),
+    .skills__content td:not(:first-child),
+    .skills__content tr th:not(:first-child),
+    .skills__content tr td:not(:first-child),
+    .skills__content th th:not(:first-child),
+    .skills__content th td:not(:first-child) {
+      margin-top: 0.5rem; }
+    .skills__content th.skills__description,
+    .skills__content td.skills__description,
+    .skills__content tr th.skills__description,
+    .skills__content tr td.skills__description,
+    .skills__content th th.skills__description,
+    .skills__content th td.skills__description {
+      margin-top: 1rem; }
+  .skills__content thead,
+  .skills__content tbody,
+  .skills__content tr thead,
+  .skills__content tr tbody,
+  .skills__content th thead,
+  .skills__content th tbody {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end; }
+  .skills__content thead tr,
+  .skills__content tbody tr,
+  .skills__content tr thead tr,
+  .skills__content tr tbody tr,
+  .skills__content th thead tr,
+  .skills__content th tbody tr {
+    flex: 0 0 calc(100% / 3);
+    padding: 4rem 0 0 4rem; }
+  .skills__content thead tr th:last-child,
+  .skills__content tr thead tr th:last-child,
+  .skills__content th thead tr th:last-child {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--white); }
+
+.skills__name {
+  font-weight: 600; }
+
+@media only screen and (max-width: 56.25em) {
+  .skills__content thead tr,
+  .skills__content tbody tr {
+    flex: 0 0 calc(100% / 2); } }
+
+@media only screen and (max-width: 37.5em) {
+  .skills__content thead tr,
+  .skills__content tbody tr {
+    flex: 0 0 100%; } }
+
+.star,
+.skills__head .stars {
+  color: var(--light); }
+
+.star {
+  display: inline-block;
+  font-size: inherit; }
+  .star--full::after {
+    content: "\2605"; }
+  .star--empty::after {
+    content: "\2606";
+    color: var(--white);
+    opacity: 0.33; }
 
 .courses {
   overflow: visible;
