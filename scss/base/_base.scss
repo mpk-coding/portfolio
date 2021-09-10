@@ -9,16 +9,16 @@ html {
 
   @include respond(landscape) {
     // < 900px
-    font-size: calc(9 / 16 * 100%); // 1rem = 9px, 9px / 16 = 56.25%
+    font-size: calc(10 / 16 * 100%); // 1rem = 9px, 9px / 16 = 56.25%
   }
 
   @include respond(portrait) {
     // < 1200px
-    font-size: calc(8 / 16 * 100%); // 1rem = 8px, 8px / 16 = 50%
+    font-size: calc(9 / 16 * 100%); // 1rem = 8px, 8px / 16 = 50%
   }
 
   @include respond("phone") {
-    font-size: calc(6 / 16 * 100%);
+    font-size: calc(8 / 16 * 100%);
   }
 }
 

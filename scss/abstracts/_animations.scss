@@ -80,6 +80,18 @@
   //
 }
 //
+.scroll {
+  //
+  &In {
+    transition-property: opacity, top;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+    //
+  }
+  //
+}
+//
 .fade {
   &Up,
   &Left,
@@ -89,19 +101,11 @@
     //
   }
   //
-  &Up {
-    //
-    transition-property: opacity, top;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
-    transition-delay: 0s;
-    //
-  }
-  //
+  &Up,
   &Left,
   &Right {
-    transition-property: filter, left, right;
-    transition-duration: 0.5s;
+    transition-property: filter, top, left, right;
+    transition-duration: 0.33s;
     transition-timing-function: ease-out;
     transition-delay: 0s;
     //
@@ -114,6 +118,18 @@
         transition-duration: 0.5s, 0.5s, 0.5s, 0.2s;
         //
       }
+      //
+    }
+    //
+  }
+  //
+  &Up {
+    top: 10rem;
+    filter: opacity(0);
+    //
+    &.shown {
+      top: 0;
+      filter: opacity(1);
       //
     }
     //

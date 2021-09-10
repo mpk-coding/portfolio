@@ -7,9 +7,9 @@
 
 //to disable transition that occur on page load
 .preload {
-  transition: none;
+  transition: none !important;
+  //;
 }
-
 //
 .background {
   //

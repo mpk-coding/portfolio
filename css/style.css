@@ -324,24 +324,31 @@ Breakpoints in EM units.
   animation-play-state: running;
   animation-iteration-count: infinite; }
 
-.fadeUp, .fadeLeft, .fadeRight {
-  position: relative;
-  z-index: 1; }
-
-.fadeUp {
+.scrollIn {
   transition-property: opacity, top;
   transition-duration: 0.15s;
   transition-timing-function: linear;
   transition-delay: 0s; }
 
-.fadeLeft, .fadeRight {
-  transition-property: filter, left, right;
-  transition-duration: 0.5s;
+.fadeUp, .fadeLeft, .fadeRight {
+  position: relative;
+  z-index: 1; }
+
+.fadeUp, .fadeLeft, .fadeRight {
+  transition-property: filter, top, left, right;
+  transition-duration: 0.33s;
   transition-timing-function: ease-out;
   transition-delay: 0s; }
-  .fadeLeft:link, .fadeLeft:visited, .fadeLefta:link, .fadeLefta:visited, .fadeRight:link, .fadeRight:visited, .fadeRighta:link, .fadeRighta:visited {
+  .fadeUp:link, .fadeUp:visited, .fadeUpa:link, .fadeUpa:visited, .fadeLeft:link, .fadeLeft:visited, .fadeLefta:link, .fadeLefta:visited, .fadeRight:link, .fadeRight:visited, .fadeRighta:link, .fadeRighta:visited {
     transition-property: filter, left, right, transform, color, background, padding;
     transition-duration: 0.5s, 0.5s, 0.5s, 0.2s; }
+
+.fadeUp {
+  top: 10rem;
+  filter: opacity(0); }
+  .fadeUp.shown {
+    top: 0;
+    filter: opacity(1); }
 
 .fadeLeft {
   left: -10rem;
@@ -365,13 +372,13 @@ html {
       font-size: calc(18 / 16 * 100%); } }
   @media only screen and (max-width: 75em) {
     html {
-      font-size: calc(9 / 16 * 100%); } }
+      font-size: calc(10 / 16 * 100%); } }
   @media only screen and (max-width: 56.25em) {
     html {
-      font-size: calc(8 / 16 * 100%); } }
+      font-size: calc(9 / 16 * 100%); } }
   @media only screen and (max-width: 37.5em) {
     html {
-      font-size: calc(6 / 16 * 100%); } }
+      font-size: calc(8 / 16 * 100%); } }
 
 body {
   background-color: var(--dark);
@@ -388,7 +395,7 @@ main {
   min-height: calc(100vh - 7rem);
   display: grid;
   display: grid;
-  grid-template-columns: [start] minmax(2rem, 1fr) [content-start] repeat(3, [col-start] minmax(min-content, 3fr) [col-end]) [content-end] minmax(2rem, 1fr) [end];
+  grid-template-columns: [start] minmax(0rem, 1fr) [content-start] repeat(3, [col-start] minmax(min-content, 42rem) [col-end]) [content-end] minmax(0rem, 1fr) [end];
   grid-column-gap: 2rem;
   justify-content: center;
   justify-items: center;
@@ -437,13 +444,16 @@ body {
   font-weight: 100; }
 
 p {
-  line-height: 1.4; }
+  line-height: 1.4;
+  font-size: 0.8em; }
 
 a,
 p,
 span,
-blockquote {
-  font-size: 3.2rem;
+blockquote,
+td,
+th {
+  font-size: 2.6rem;
   color: inherit;
   text-decoration: none; }
 
@@ -496,13 +506,13 @@ h6 {
     font-weight: inherit; }
 
 h1 {
-  font-size: 8.19rem; }
+  font-size: 4.8rem; }
 
 h2 {
-  font-size: 5.12rem; }
+  font-size: 3.2rem; }
 
 h3, h4, h5, h6 {
-  font-size: 3.2rem; }
+  font-size: 2.6rem; }
 
 a, a:link, a:visited {
   color: var(--accentLight);
@@ -554,7 +564,6 @@ a, a:link, a:visited {
 .skills__group span,
 .myWork__link {
   font-family: "Overpass", sans-serif;
-  font-size: 125%;
   font-weight: 400; }
 
 .navbar {
@@ -622,7 +631,7 @@ a, a:link, a:visited {
 .landing {
   align-content: flex-end;
   min-height: unset;
-  height: calc(100vh - calc(14rem));
+  height: calc(100vh - calc(11rem));
   mix-blend-mode: screen; }
   .landing__img {
     position: absolute;
@@ -918,7 +927,9 @@ a, a:link, a:visited {
     .skills__content th th.skills__description,
     .skills__content th td.skills__description {
       margin-top: 1rem;
-      line-height: 1.4; }
+      line-height: 1.4;
+      word-break: break-word;
+      hyphens: auto; }
   .skills__content thead,
   .skills__content tbody,
   .skills__content tr thead,
@@ -949,29 +960,29 @@ a, a:link, a:visited {
     padding-bottom: 2rem;
     border-bottom: 1px solid var(--white); }
 
+.skills__content .skills__head tr {
+  padding: 0; }
+
 .skills__name {
   font-weight: 600; }
 
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 75em) {
   .skills__content thead tr,
   .skills__content tbody tr {
-    flex: 0 0 calc((100% - 2rem) / 2); }
+    flex: 0 0 calc((100% - 1 * 2rem) / 2); }
   .skills__content thead tr:not(:nth-child(3n + 3)),
   .skills__content tbody tr:not(:nth-child(3n + 3)) {
     margin-right: 0; }
-  .skills__content thead tr:not(:nth-child(2n)),
-  .skills__content tbody tr:not(:nth-child(2n)) {
+  .skills__content thead tr:nth-child(2n + 1),
+  .skills__content tbody tr:nth-child(2n + 1) {
     margin-right: 2rem; } }
 
 @media only screen and (max-width: 37.5em) {
   .skills__content thead tr,
   .skills__content tbody tr {
     flex: 0 0 100%; }
-  .skills__content thead tr:not(:nth-child(3n + 3)),
-  .skills__content tbody tr:not(:nth-child(3n + 3)) {
-    margin-right: 0; }
-  .skills__content thead tr:not(:nth-child(2n)),
-  .skills__content tbody tr:not(:nth-child(2n)) {
+  .skills__content thead tr:nth-child(2n + 1),
+  .skills__content tbody tr:nth-child(2n + 1) {
     margin-right: 0; } }
 
 .star,
@@ -1009,7 +1020,6 @@ a, a:link, a:visited {
     grid-column: start / col-start 3; }
   .courses__heading > * {
     position: relative;
-    font-size: 150%;
     font-family: "Unica One", cursive;
     display: inline-block;
     padding-bottom: 2.25rem; }
@@ -1023,8 +1033,6 @@ a, a:link, a:visited {
       display: flex;
       width: 100%;
       margin-left: -0.375em; }
-    .courses__list h2 {
-      font-size: 150%; }
     .courses__list h2:not(:first-child) {
       margin-top: 6rem;
       padding-bottom: 2.25rem; }
@@ -1038,6 +1046,7 @@ a, a:link, a:visited {
     grid-column: content-start / content-end;
     width: 100%;
     max-width: 50rem;
+    padding: 0 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1069,7 +1078,7 @@ a, a:link, a:visited {
 
 a.myWork__link {
   font-weight: 900;
-  font-size: 200%;
+  font-size: 175%;
   max-width: 100%;
   background: var(--dark);
   font-family: "Lobster Two";
@@ -1084,14 +1093,14 @@ a.myWork__link {
   font-weight: 400;
   border-top: 1px solid currentColor;
   display: grid;
-  grid-template-columns: [start] minmax(2rem, 1fr) [content-start] repeat(3, [col-start] minmax(min-content, 3fr) [col-end]) [content-end] minmax(2rem, 1fr) [end];
+  grid-template-columns: [start] minmax(0rem, 1fr) [content-start] repeat(3, [col-start] minmax(min-content, 42rem) [col-end]) [content-end] minmax(0rem, 1fr) [end];
   grid-column-gap: 2rem;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-items: flex-start;
   text-align: start;
-  padding: 2rem;
+  padding: 2rem 2rem 4rem;
   color: inherit; }
   @media only screen and (max-width: 56.25em) {
     .footer {
@@ -1158,7 +1167,7 @@ a.myWork__link {
   display: table; }
 
 .preload {
-  transition: none; }
+  transition: none !important; }
 
 .background--accentDark {
   background-color: #884e88; }

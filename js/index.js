@@ -1,13 +1,17 @@
 window.onload = function (event) {
-  //  restore scroll
-  window.scroll({
-    left: 0,
-    top: window.localStorage.scroll,
-    behavior: "smooth",
-  });
   //
   console.log("index.js - Document loaded");
   //
+  if (window.scrollY != 0) {
+    console.log("fl");
+    //
+    window.scrollTo({
+      left: 0,
+      top: 0,
+      behavior: "auto",
+    });
+    //
+  }
   //  VIDEO
   //
   /*
@@ -85,15 +89,4 @@ function navBar() {
     //
   }
   //
-  //
-  //
-  this.oldScroll = this.scrollY;
-  //
-  window.localStorage.scroll = this.scrollY;
-  //
 }
-//
-//  1 janusz
-//  2 backlight under cursor, ripple onclick || canvas shit
-//  3 popcorn /px scroll + random shot of 1 or more popcorns
-//  tba

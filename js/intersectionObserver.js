@@ -49,7 +49,7 @@ function initObserver() {
   //
   //
   //
-  let targets = document.querySelectorAll(".fadeUp, .fadeLeft, .fadeRight");
+  let targets = document.querySelectorAll(".scrollIn, .fadeUp, .fadeLeft, .fadeRight");
   //
   let observer;
   //
@@ -62,33 +62,37 @@ function initObserver() {
     //
     entries.forEach((entry) => {
       //  gitHub vaporWave link - section.links
-      if (entry.target.classList.contains("fadeUp")) {
+      if (entry.target.classList.contains("scrollIn")) {
         //  scroll down
         if (!prevScroll) {
-          document.querySelectorAll(".fadeUp").forEach(function (currentValue) {
-            if (entry.intersectionRatio > 0.9) {
-              currentValue.style.opacity = 1;
+          document
+            .querySelectorAll(".scrollIn")
+            .forEach(function (currentValue) {
+              if (entry.intersectionRatio > 0.9) {
+                currentValue.style.opacity = 1;
+                //
+                currentValue.style.top = 0 + "px";
+                //
+              } else {
+                currentValue.style.opacity = Number(
+                  entry.intersectionRatio.toFixed(2)
+                );
+                //
+                currentValue.style.top =
+                  Number(entry.intersectionRatio.toFixed(2)) * -top +
+                  top +
+                  "px";
+                //
+              }
               //
-              currentValue.style.top = 0 + "px";
-              //
-            } else {
-              currentValue.style.opacity = Number(
-                entry.intersectionRatio.toFixed(2)
-              );
-              //
-              currentValue.style.top =
-                Number(entry.intersectionRatio.toFixed(2)) * -top + top + "px";
-              //
-            }
-            //
-          });
+            });
           //
         }
         if (window.scrollY > prevScroll) {
           //
           if (Number(entry.intersectionRatio.toFixed(2)) > prevRatio) {
             document
-              .querySelectorAll(".fadeUp")
+              .querySelectorAll(".scrollIn")
               .forEach(function (currentValue) {
                 if (entry.intersectionRatio > 0.9) {
                   currentValue.style.opacity = 1;
@@ -115,7 +119,7 @@ function initObserver() {
           //  scroll up
           if (entry.intersectionRatio < prevRatio) {
             document
-              .querySelectorAll(".fadeUp")
+              .querySelectorAll(".scrollIn")
               .forEach(function (currentValue) {
                 currentValue.style.opacity = entry.intersectionRatio.toFixed(2);
                 //
@@ -137,12 +141,7 @@ function initObserver() {
           entry.target.classList.add("shown");
         }
         if (entry.intersectionRatio > 0) {
-          if (entry.target.classList.contains("fadeLeft")) {
-            //
-            entry.target.classList.add("shown");
-          }
-          //
-          if (entry.target.classList.contains("fadeRight")) {
+          if (entry.target.getAttribute("class").match(/(fade)/i)) {
             //
             entry.target.classList.add("shown");
           }
@@ -154,10 +153,10 @@ function initObserver() {
       debounce(function () {
         console.log("debounce");
         //  scroll down
-        if (entry.target.classList.contains("fadeUp")) {
+        if (entry.target.classList.contains("scrollIn")) {
           if (entry.boundingClientRect.top <= 0) {
             document
-              .querySelectorAll(".fadeUp")
+              .querySelectorAll(".scrollIn")
               .forEach(function (currentValue) {
                 currentValue.style.opacity = 1;
                 //
@@ -169,7 +168,7 @@ function initObserver() {
           //  scroll up
           if (entry.boundingClientRect.top >= window.innerHeight) {
             document
-              .querySelectorAll(".fadeUp")
+              .querySelectorAll(".scrollIn")
               .forEach(function (currentValue) {
                 currentValue.style.opacity = 0;
                 //
@@ -182,17 +181,13 @@ function initObserver() {
         } else {
           //
           if (entry.intersectionRatio > 0) {
-            if (entry.target.classList.contains("fadeLeft")) {
-              //
-              entry.target.classList.add("shown");
-            }
-            //
-            if (entry.target.classList.contains("fadeRight")) {
+            if (entry.target.getAttribute("class").match(/(fade)/i)) {
               //
               entry.target.classList.add("shown");
             }
             //
           }
+          //
         }
         //
       }, 36);

@@ -64,12 +64,12 @@ Breakpoints in EM units.
   //
   grid-template-columns:
     [start]
-    minmax(2rem, 1fr) [content-start] repeat(
+    minmax(0rem, 1fr) [content-start] repeat(
       3,
-      [col-start] minmax(min-content, 3fr) [col-end]
+      [col-start] minmax(min-content, 42rem) [col-end]
     )
     [content-end]
-    minmax(2rem, 1fr)
+    minmax(0rem, 1fr)
     [end];
   //
   grid-column-gap: 2rem;
@@ -81,11 +81,8 @@ Breakpoints in EM units.
 }
 //
 @mixin textShadow() {
-  text-shadow:
-   -1px -1px 0 var(--dark),  
-    1px -1px 0 var(--dark),
-    -1px 1px 0 var(--dark),
-     1px 1px 0 var(--dark);
+  text-shadow: -1px -1px 0 var(--dark), 1px -1px 0 var(--dark),
+    -1px 1px 0 var(--dark), 1px 1px 0 var(--dark);
   //
 }
 //

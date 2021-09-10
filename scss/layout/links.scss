@@ -11,6 +11,7 @@
     grid-column: content-start / content-end;
     width: 100%;
     max-width: 50rem;
+    padding: 0 2rem;
     //
     display: flex;
     justify-content: center;
@@ -60,7 +61,7 @@
 //
 a.myWork__link {
   font-weight: 900;
-  font-size: 200%;
+  font-size: 175%;
   max-width: 100%;
   background: var(--dark);
   //

@@ -70,6 +70,8 @@
         margin-top: 1rem;
         //
         line-height: 1.4;
+        word-break: break-word;
+        hyphens: auto;
         //
       }
       //
@@ -92,6 +94,7 @@
       padding-top: 4rem;
       //
     }
+    //
     thead tr,
     tbody tr {
       &:not(:nth-child(3n + 3)) {
@@ -109,17 +112,22 @@
     //
   }
   //
+  &__content .skills__head tr {
+    padding: 0;
+    //
+  }
+  //
   &__name {
     font-weight: 600;
     //
   }
   //
   &__content {
-    @include respond("portrait") {
+    @include respond("landscape") {
       //  2 col
       thead tr,
       tbody tr {
-        flex: 0 0 calc((100% - 2rem) / 2);
+        flex: 0 0 calc((100% - 1 * 2rem) / 2);
         //
       }
       //
@@ -130,7 +138,7 @@
           //
         }
         //
-        &:not(:nth-child(2n)) {
+        &:nth-child(2n + 1) {
           margin-right: 2rem;
           //
         }
@@ -149,12 +157,7 @@
       //
       thead tr,
       tbody tr {
-        &:not(:nth-child(3n + 3)) {
-          margin-right: 0;
-          //
-        }
-        //
-        &:not(:nth-child(2n)) {
+        &:nth-child(2n + 1) {
           margin-right: 0;
           //
         }
