@@ -340,7 +340,7 @@ Breakpoints in EM units.
   transition-timing-function: ease-out;
   transition-delay: 0s; }
   .fadeLeft:link, .fadeLeft:visited, .fadeLefta:link, .fadeLefta:visited, .fadeRight:link, .fadeRight:visited, .fadeRighta:link, .fadeRighta:visited {
-    transition-property: filter, left, right, transform, color, background, padding;
+    transition-property: filter, left, right, transform, color, background, padding;
     transition-duration: 0.5s, 0.5s, 0.5s, 0.2s; }
 
 .fadeLeft {
@@ -876,7 +876,6 @@ a, a:link, a:visited {
     font-family: "Unica One", cursive; }
   .stack .container {
     grid-column: col-start 2 / end;
-    text-align: end;
     padding: 0 3rem; }
     .stack .container.skills__container {
       grid-column: start / end;
@@ -888,7 +887,8 @@ a, a:link, a:visited {
         white-space: nowrap;
         color: var(--white); }
     .stack .container.stack__captionContainer {
-      margin-top: 3rem; }
+      margin-top: 3rem;
+      padding-top: 4rem; }
 
 .skills__content,
 .skills__content tr,
@@ -896,7 +896,7 @@ a, a:link, a:visited {
   width: 100%;
   display: flex;
   flex-flow: column;
-  align-items: flex-end; }
+  align-items: flex-start; }
   .skills__content th,
   .skills__content td,
   .skills__content tr th,
@@ -910,14 +910,15 @@ a, a:link, a:visited {
     .skills__content tr td:not(:first-child),
     .skills__content th th:not(:first-child),
     .skills__content th td:not(:first-child) {
-      margin-top: 0.5rem; }
+      margin-top: 1rem; }
     .skills__content th.skills__description,
     .skills__content td.skills__description,
     .skills__content tr th.skills__description,
     .skills__content tr td.skills__description,
     .skills__content th th.skills__description,
     .skills__content th td.skills__description {
-      margin-top: 1rem; }
+      margin-top: 1rem;
+      line-height: 1.4; }
   .skills__content thead,
   .skills__content tbody,
   .skills__content tr thead,
@@ -926,15 +927,22 @@ a, a:link, a:visited {
   .skills__content th tbody {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-end; }
+    justify-content: flex-start; }
   .skills__content thead tr,
   .skills__content tbody tr,
   .skills__content tr thead tr,
   .skills__content tr tbody tr,
   .skills__content th thead tr,
   .skills__content th tbody tr {
-    flex: 0 0 calc(100% / 3);
-    padding: 4rem 0 0 4rem; }
+    flex: 0 0 calc((100% - 2 * 2rem) / 3);
+    padding-top: 4rem; }
+  .skills__content thead tr:not(:nth-child(3n + 3)),
+  .skills__content tbody tr:not(:nth-child(3n + 3)),
+  .skills__content tr thead tr:not(:nth-child(3n + 3)),
+  .skills__content tr tbody tr:not(:nth-child(3n + 3)),
+  .skills__content th thead tr:not(:nth-child(3n + 3)),
+  .skills__content th tbody tr:not(:nth-child(3n + 3)) {
+    margin-right: 2rem; }
   .skills__content thead tr th:last-child,
   .skills__content tr thead tr th:last-child,
   .skills__content th thead tr th:last-child {
@@ -947,12 +955,24 @@ a, a:link, a:visited {
 @media only screen and (max-width: 56.25em) {
   .skills__content thead tr,
   .skills__content tbody tr {
-    flex: 0 0 calc(100% / 2); } }
+    flex: 0 0 calc((100% - 2rem) / 2); }
+  .skills__content thead tr:not(:nth-child(3n + 3)),
+  .skills__content tbody tr:not(:nth-child(3n + 3)) {
+    margin-right: 0; }
+  .skills__content thead tr:not(:nth-child(2n)),
+  .skills__content tbody tr:not(:nth-child(2n)) {
+    margin-right: 2rem; } }
 
 @media only screen and (max-width: 37.5em) {
   .skills__content thead tr,
   .skills__content tbody tr {
-    flex: 0 0 100%; } }
+    flex: 0 0 100%; }
+  .skills__content thead tr:not(:nth-child(3n + 3)),
+  .skills__content tbody tr:not(:nth-child(3n + 3)) {
+    margin-right: 0; }
+  .skills__content thead tr:not(:nth-child(2n)),
+  .skills__content tbody tr:not(:nth-child(2n)) {
+    margin-right: 0; } }
 
 .star,
 .skills__head .stars {
@@ -1017,7 +1037,7 @@ a, a:link, a:visited {
   .links .img__wrap {
     grid-column: content-start / content-end;
     width: 100%;
-    max-width: 60rem;
+    max-width: 50rem;
     display: flex;
     justify-content: center;
     align-items: center;

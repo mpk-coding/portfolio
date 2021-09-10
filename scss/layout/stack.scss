@@ -11,8 +11,6 @@
   .container {
     grid-column: col-start 2 / end;
     //
-    text-align: end;
-    //
     padding: 0 3rem;
     //
     &.skills__container {
@@ -38,6 +36,9 @@
     &.stack__captionContainer {
       margin-top: 3rem;
       //
+      padding-top: 4rem;
+      //border-top: 1px solid var(--white);
+      //
     }
     //
   }
@@ -54,19 +55,21 @@
     //
     display: flex;
     flex-flow: column;
-    align-items: flex-end;
+    align-items: flex-start;
     //
     th,
     td {
       padding: 0;
       //
       &:not(:first-child) {
-        margin-top: 0.5rem;
+        margin-top: 1rem;
         //
       }
       //
       &.skills__description {
         margin-top: 1rem;
+        //
+        line-height: 1.4;
         //
       }
       //
@@ -78,15 +81,23 @@
     tbody {
       display: flex;
       flex-flow: row wrap;
-      justify-content: flex-end;
+      justify-content: flex-start;
       //
     }
-    //
+    //  3 col
     thead tr,
     tbody tr {
-      flex: 0 0 calc(100% / 3);
+      flex: 0 0 calc((100% - 2 * 2rem) / 3);
       //
-      padding: 4rem 0 0 4rem;
+      padding-top: 4rem;
+      //
+    }
+    thead tr,
+    tbody tr {
+      &:not(:nth-child(3n + 3)) {
+        margin-right: 2rem;
+        //
+      }
       //
     }
     //
@@ -105,19 +116,48 @@
   //
   &__content {
     @include respond("portrait") {
+      //  2 col
+      thead tr,
+      tbody tr {
+        flex: 0 0 calc((100% - 2rem) / 2);
+        //
+      }
       //
       thead tr,
       tbody tr {
-        flex: 0 0 calc(100% / 2);
+        &:not(:nth-child(3n + 3)) {
+          margin-right: 0;
+          //
+        }
+        //
+        &:not(:nth-child(2n)) {
+          margin-right: 2rem;
+          //
+        }
         //
       }
       //
     }
     //
     @include respond("phone") {
+      //  1 col
       thead tr,
       tbody tr {
         flex: 0 0 100%;
+        //
+      }
+      //
+      thead tr,
+      tbody tr {
+        &:not(:nth-child(3n + 3)) {
+          margin-right: 0;
+          //
+        }
+        //
+        &:not(:nth-child(2n)) {
+          margin-right: 0;
+          //
+        }
         //
       }
       //

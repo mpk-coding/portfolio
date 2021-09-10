@@ -43,7 +43,7 @@ function initObserver() {
   //
   let options = {
     root: null,
-    rootMargin: `${navbarHeight} 0px 0px 0px`,
+    rootMargin: `${navbarHeight} 0px -${navbarHeight} 0px`,
     threshold: thresholds(steps),
   };
   //
