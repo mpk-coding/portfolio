@@ -519,8 +519,7 @@ a, a:link, a:visited {
   text-decoration: none;
   padding: calc(0.187em * 2) 0.375em 0.187em 0.375em;
   position: relative;
-  z-index: 1;
-  max-width: calc(100% - 0.375em); }
+  z-index: 1; }
   a::after, a:link::after, a:visited::after {
     content: "";
     position: absolute;
@@ -1120,7 +1119,8 @@ a.myWork__link {
       font-size: inherit;
       color: var(--white);
       padding: 0.25em 0;
-      border-radius: 2px; }
+      border-radius: 2px;
+      white-space: nowrap; }
     .footer .copyright a {
       display: inline-block;
       font-size: 100%; }

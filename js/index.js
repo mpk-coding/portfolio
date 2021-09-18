@@ -90,3 +90,37 @@ function navBar() {
   }
   //
 }
+
+function diagonalBeepers() {
+  moving = true;
+  counter = 0;
+  //
+  while (moving) {
+    if (counter == 0) {
+       putBeeper();
+       //
+    } else {
+       if (counter % 2 == 0) {
+          putBeeper();
+          //
+       }
+       //
+    }
+    //
+    //
+    //
+    if (frontIsClear()) {
+       move();
+       counter++;
+       //
+    } else {
+       moving = false;
+       break;
+       //
+    }
+    //
+  }
+  //
+  //
+  //
+}
